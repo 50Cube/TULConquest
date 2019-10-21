@@ -1,3 +1,6 @@
+import 'dart:ffi';
+import 'dart:typed_data';
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -13,13 +16,27 @@ class _MyAppState extends State<MyApp> {
   GoogleMapController mapController;
 
   final LatLng _center = const LatLng(51.746772, 19.453217);
+  
+  List<Marker> znaczniki = [];
 
-  void _onMapCreated(GoogleMapController controller) {
-    mapController = controller;
+
+  void dodajZnacznikiDoListy ()
+  {
+    znaczniki.add(Marker(
+        markerId: MarkerId('Znacznik'),
+        draggable: false,
+        onTap: () {print('Marker tapped');},
+        position: LatLng(51.746, 19.453)
+    ));
   }
+
+//  void _onMapCreated(GoogleMapController controller) {
+//    mapController = controller;
+//  }
 
   @override
   Widget build(BuildContext context) {
+    dodajZnacznikiDoListy();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -83,12 +100,14 @@ class _MyAppState extends State<MyApp> {
                     )
               ])),
         ),
+
         body: GoogleMap(
-          onMapCreated: _onMapCreated,
+          //onMapCreated: _onMapCreated,
           initialCameraPosition: CameraPosition(
             target: _center,
             zoom: 19.0,
           ),
+          markers: Set.from(znaczniki),
         ),
       ),
     );
