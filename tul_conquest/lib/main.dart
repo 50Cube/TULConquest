@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:tul_conquest/markers.dart';
+import 'package:location/location.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,39 +22,16 @@ class _MyAppState extends State<MyApp> {
   bool satelliteMapButtonVisibility = false;
   MapType mapType = MapType.satellite;
   Color satelliteIconColor = Colors.white;
-  Color normalIconeColor = Colors.black;
-
-  void changedVisibility(bool visibility, String name) {
-    setState(() {
-      if (name == "normal") {
-        normalMapButtonVisibility = visibility;
-      }
-      if (name == "satellite") {
-
-      }
-    });
-  }
-
-
-  void dodajZnacznikiDoListy(GoogleMapController controller) {
-    znaczniki.add(Marker(
-        markerId: MarkerId('Znacznik'),
-        draggable: false,
-        onTap: () {
-          controller.animateCamera(
-              CameraUpdate.newLatLngZoom(LatLng(51.746, 19.453), 19.0));
-        },
-        position: LatLng(51.746, 19.453)
-    ));
-  }
+  Color normalIconColor = Colors.black;
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
   }
 
+
   @override
   Widget build(BuildContext context) {
-    dodajZnacznikiDoListy(mapController);
+    dodajZnacznikiDoListy(mapController, znaczniki);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -123,6 +102,7 @@ class _MyAppState extends State<MyApp> {
               child: GoogleMap(
                 onMapCreated: _onMapCreated,
                 initialCameraPosition: CameraPosition(
+                  bearing: 0,
                   target: _center,
                   zoom: 19.0,
                 ),
@@ -159,7 +139,7 @@ class _MyAppState extends State<MyApp> {
                     onTap: () {
                       setState(() {
                         mapType = MapType.normal;
-                        normalIconeColor = Colors.white;
+                        normalIconColor = Colors.white;
                         satelliteIconColor = Colors.black;
                         print("normal map clicked");
                       });
@@ -172,7 +152,7 @@ class _MyAppState extends State<MyApp> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(18.0),
                             color: Colors.indigo,
-                            border: Border.all(width: 2.0, color: normalIconeColor),
+                            border: Border.all(width: 2.0, color: normalIconColor),
                           ),
                           child: Icon(Icons.map, color: Colors.white),
                         )
@@ -185,7 +165,7 @@ class _MyAppState extends State<MyApp> {
                     onTap: () {
                       setState(() {
                         mapType = MapType.satellite;
-                        normalIconeColor = Colors.black;
+                        normalIconColor = Colors.black;
                         satelliteIconColor = Colors.white;
                         print("satellite map clicked");
                       });
@@ -208,10 +188,10 @@ class _MyAppState extends State<MyApp> {
 
               Align(
                   alignment: Alignment(0.87,-0.72),
-                  child: InkWell( // camera button
+                  child: InkWell( // location button
                       onTap: () {
-                        // move camera on my position
-                        print("camera button clicked");
+                        // move cam to user location
+                        print("location button clicked");
                       },
                       child: Container(
                         height: 45.0,
