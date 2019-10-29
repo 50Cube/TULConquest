@@ -21,8 +21,8 @@ class _MyAppState extends State<MyApp> {
   bool normalMapButtonVisibility = false;
   bool satelliteMapButtonVisibility = false;
   MapType mapType = MapType.satellite;
-  Color satelliteIconColor = Colors.white;
-  Color normalIconColor = Colors.black;
+  double satelliteIconBorder = 2.0;
+  double normalIconBorder = 0.5;
 
 
   Location location = Location();
@@ -136,7 +136,7 @@ class _MyAppState extends State<MyApp> {
 //                )
 //              ),
               new Align(
-                  alignment: Alignment(0.88,-0.94),
+                  alignment: Alignment(-0.92,-0.96),
                   child: InkWell( // Wybor rodzaju mapy
                       onTap: () {
                         setState(() {
@@ -144,111 +144,88 @@ class _MyAppState extends State<MyApp> {
                           satelliteMapButtonVisibility = !satelliteMapButtonVisibility;
                         });
                       },
-                      child: Container(
+                      child: Opacity(
+                        opacity: 0.8,
+                          child: Container(
                         height: 48.0,
                         width: 48.0,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(18.0),
-                            color: Colors.indigo,
-                            border: Border.all(width: 2.0)
+                            borderRadius: BorderRadius.circular(8.0),
+                            color: Colors.white,
+                            border: Border.all(width: 0.5),
                         ),
-                        child: Icon(Icons.layers, color: Colors.white),
+                        child: Icon(Icons.layers, color: Colors.black54),
                       )
+                  )
                   )
               ),
                 Align(
-                  alignment: Alignment(0.5,-0.94),
+                  alignment: Alignment(-0.55,-0.96),
                   child: InkWell( // normalna mapa
                     onTap: () {
                       setState(() {
                         mapType = MapType.normal;
-                        normalIconColor = Colors.white;
-                        satelliteIconColor = Colors.black;
+                        normalIconBorder = 2.0;
+                        satelliteIconBorder = 0.5;
                         print("normal map clicked");
                       });
                     },
                     child: Visibility(
                         visible: normalMapButtonVisibility,
-                        child: Container(
+                        child: Opacity (
+                            opacity: 0.8,
+                            child: Container(
                           height: 48.0,
                           width: 48.0,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(18.0),
-                            color: Colors.indigo,
-                            border: Border.all(width: 2.0, color: normalIconColor),
+                            borderRadius: BorderRadius.circular(8.0),
+                            color: Colors.white,
+                            border: Border.all(width: normalIconBorder, color: Colors.black),
                           ),
-                          child: Icon(Icons.map, color: Colors.white),
+                          child: Icon(Icons.map, color: Colors.black54),
                         )
                     ),
+                    ),
                   )
+
               ),
               Align(
-                  alignment: Alignment(0.15,-0.94),
+                  alignment: Alignment(-0.2,-0.96),
                   child: InkWell( // mapa satelita
                     onTap: () {
                       setState(() {
                         mapType = MapType.satellite;
-                        normalIconColor = Colors.black;
-                        satelliteIconColor = Colors.white;
+                        normalIconBorder = 0.5;
+                        satelliteIconBorder = 2.0;
                         print("satellite map clicked");
                       });
                     },
                     child: Visibility(
                         visible: satelliteMapButtonVisibility,
-                        child: Container(
+                        child: Opacity(
+                            opacity: 0.8,
+                            child: Container(
                           height: 48.0,
                           width: 48.0,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(18.0),
-                            color: Colors.indigo,
-                            border: Border.all(width: 2.0, color: satelliteIconColor),
+                            borderRadius: BorderRadius.circular(8.0),
+                            color: Colors.white,
+                            border: Border.all(width: satelliteIconBorder, color: Colors.black),
                           ),
-                          child: Icon(Icons.satellite, color: Colors.white),
+                          child: Icon(Icons.satellite, color: Colors.black54),
+                        ),
                         )
                     ),
                   )
               ),
 
-              Align(
-                  alignment: Alignment(0.87,-0.72),
-                  child: InkWell( // location button
-                      onTap: () {
-                        mapController.animateCamera(
-                            CameraUpdate.newLatLngZoom(LatLng(currentLocation.latitude, currentLocation.longitude), 19.0));
-                        print("location button clicked");
-                      },
-                      child: Container(
-                        height: 45.0,
-                        width: 45.0,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25.0),
-                          color: Colors.indigo,
-                          border: Border.all(width: 2.0),
-                        ),
-                        child: Icon(
-                            Icons.my_location,
-                            color: Colors.white
-                        ),
-                      )
-                  )
-              )
+             
             ]
         ),
       ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 class MainRoute extends StatelessWidget {
