@@ -24,6 +24,22 @@ class _MyAppState extends State<MyApp> {
   Color satelliteIconColor = Colors.white;
   Color normalIconColor = Colors.black;
 
+
+  Location location = Location();
+  LocationData currentLocation;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    location.onLocationChanged().listen((value){
+      setState(() {
+        currentLocation = value;
+      });
+    });
+  }
+
+
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
   }
@@ -112,6 +128,14 @@ class _MyAppState extends State<MyApp> {
                 markers: Set.from(znaczniki),
               ),
             ),
+              new Align(
+                alignment: Alignment.center,
+                child: Container(
+                    child:
+                    currentLocation == null ? CircularProgressIndicator() :
+                    Text("Location" + currentLocation.latitude.toString() + " " + currentLocation.longitude.toString())
+                )
+              ),
               new Align(
                   alignment: Alignment(0.88,-0.94),
                   child: InkWell( // Wybor rodzaju mapy
@@ -214,6 +238,18 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 class MainRoute extends StatelessWidget {
   @override
