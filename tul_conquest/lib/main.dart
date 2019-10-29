@@ -128,14 +128,13 @@ class _MyAppState extends State<MyApp> {
                 markers: Set.from(znaczniki),
               ),
             ),
-              new Align(
-                alignment: Alignment.center,
-                child: Container(
-                    child:
-                    currentLocation == null ? CircularProgressIndicator() :
-                    Text("Location" + currentLocation.latitude.toString() + " " + currentLocation.longitude.toString())
-                )
-              ),
+//              new Align(
+//                alignment: Alignment.center,
+//                child: Container(
+//                    child:
+//                    Text("Location" + currentLocation.latitude.toString() + " " + currentLocation.longitude.toString())
+//                )
+//              ),
               new Align(
                   alignment: Alignment(0.88,-0.94),
                   child: InkWell( // Wybor rodzaju mapy
@@ -214,7 +213,8 @@ class _MyAppState extends State<MyApp> {
                   alignment: Alignment(0.87,-0.72),
                   child: InkWell( // location button
                       onTap: () {
-                        // move cam to user location
+                        mapController.animateCamera(
+                            CameraUpdate.newLatLngZoom(LatLng(currentLocation.latitude, currentLocation.longitude), 19.0));
                         print("location button clicked");
                       },
                       child: Container(
