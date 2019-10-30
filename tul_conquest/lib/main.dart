@@ -16,13 +16,36 @@ class _MyAppState extends State<MyApp> {
 
   final LatLng _center = const LatLng(51.746772, 19.453217);
 
-  List<Marker> znaczniki = [];
+  List<Marker> znaczniki = new List<Marker>();
+
+  void dodajZnacznikiDoListy(
+      GoogleMapController controller, List<Marker> znaczniki) {
+    znaczniki.add(Marker(
+        markerId: MarkerId('Znacznik'),
+        draggable: false,
+        onTap: () {
+          controller.animateCamera(
+              CameraUpdate.newLatLngZoom(LatLng(51.746, 19.453), 19.0));
+          setState(() {
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          });
+        },
+        position: LatLng(51.746, 19.453)));
+  }
 
   bool normalMapButtonVisibility = false;
   bool satelliteMapButtonVisibility = false;
+  bool rozwinButtonVisibility = false;
   MapType mapType = MapType.satellite;
   double satelliteIconBorder = 2.0;
   double normalIconBorder = 0.5;
+
+  double rozwinButtonHeight = 40.0;
+  bool rozwinTextVisibility = true;
+  bool arrowUpVisibility = true;
+  bool arrowDownVisibility = false;
+  bool zwinTextVisibility = false;
+  bool sprawdzButtonVisiibility = false;
 
   Location location = Location();
   LocationData currentLocation;
@@ -206,38 +229,154 @@ class _MyAppState extends State<MyApp> {
               )),
 
           Align(
+              // ROZWIN
               alignment: Alignment(0, 0.8),
-              child: InkWell(
-                  onTap: () {},
-                  child: Visibility(
-                      visible: true,
-                      child: Container(
-                        height: 40.0,
-                        width: 180.0,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0),
-                          color: Colors.white,
-                          border: Border.all(width: 2.0, color: Colors.black),
-                        ),
-                        child: Row(
-                          children: <Widget>[
-                            Container(
-                              width: 150.0,
-                              margin: EdgeInsets.fromLTRB(0, 4, 0, 0),
-                              child: Text(
-                                'ROZWIŃ',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 25.0,
+              child: Visibility(
+                  visible: true,
+                  child: AnimatedContainer(
+                    duration: Duration(milliseconds: 350),
+                    height: rozwinButtonHeight,
+                    width: 250.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      color: Colors.white,
+                      border: Border.all(width: 2.0, color: Colors.black),
+                    ),
+                    child: Stack(
+                        children: <Widget>[
+                      InkWell(
+                          // SPRAWDZ
+                          onTap: () {
+                            setState(() {});
+                          },
+                          child: Align(
+                            alignment: Alignment(0, 0.6),
+                            child: Visibility(
+                              visible: sprawdzButtonVisiibility,
+                              child: Container(
+                                width: 120.0,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: Colors.black, width: 2.0),
+                                ),
+                                child: Text(
+                                  'SPRAWDŹ',
+                                  //textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 25.0,
+                                  ),
                                 ),
                               ),
                             ),
-                            Icon(
-                              Icons.map,
-                            )
-                          ],
-                        ),
-                      ))))
+                          )),
+                      Row(
+                        children: <Widget>[
+                          InkWell(
+                              // NAPIS ROZWIN
+                              onTap: () {
+                                setState(() {
+                                  rozwinTextVisibility = false;
+                                  arrowUpVisibility = false;
+                                  zwinTextVisibility = true;
+                                  arrowDownVisibility = true;
+                                  rozwinButtonHeight = 440.0;
+                                  sprawdzButtonVisiibility = true;
+                                });
+                              },
+                              child: Align(
+                                alignment: Alignment(0, 0.8),
+                                child: Visibility(
+                                  visible: rozwinTextVisibility,
+                                  child: Container(
+                                    width: 100.0,
+                                    margin: EdgeInsets.fromLTRB(60, 4, 0, 0),
+                                    child: Text(
+                                      'ROZWIŃ',
+                                      style: TextStyle(
+                                        fontSize: 25.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )),
+                          InkWell(
+                              // STRZALKA W GORE
+                              onTap: () {
+                                setState(() {
+                                  rozwinTextVisibility = false;
+                                  arrowUpVisibility = false;
+                                  zwinTextVisibility = true;
+                                  arrowDownVisibility = true;
+                                  rozwinButtonHeight = 440.0;
+                                  sprawdzButtonVisiibility = true;
+                                });
+                              },
+                              child: Align(
+                                  alignment: Alignment(0, 0.8),
+                                  child: Visibility(
+                                      visible: arrowUpVisibility,
+                                      child: Container(
+                                        width: 30.0,
+                                        margin: EdgeInsets.fromLTRB(0, 0, 0, 3),
+                                        child: Icon(
+                                          Icons.arrow_upward,
+                                        ),
+                                      )))),
+                          InkWell(
+                              // NAPIS ZWIN
+                              onTap: () {
+                                setState(() {
+                                  zwinTextVisibility = false;
+                                  arrowDownVisibility = false;
+                                  rozwinTextVisibility = true;
+                                  arrowUpVisibility = true;
+                                  rozwinButtonHeight = 40.0;
+                                  sprawdzButtonVisiibility = false;
+                                });
+                              },
+                              child: Align(
+                                alignment: Alignment(0, 0.94),
+                                child: Visibility(
+                                  visible: zwinTextVisibility,
+                                  child: Container(
+                                    width: 70.0,
+                                    margin: EdgeInsets.fromLTRB(75, 0, 0, 0),
+                                    child: Text(
+                                      'ZWIŃ',
+                                      style: TextStyle(
+                                        fontSize: 25.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )),
+                          InkWell(
+                              // STRZALKA W DOL
+                              onTap: () {
+                                setState(() {
+                                  zwinTextVisibility = false;
+                                  arrowDownVisibility = false;
+                                  rozwinTextVisibility = true;
+                                  arrowUpVisibility = true;
+                                  rozwinButtonHeight = 40.0;
+                                  sprawdzButtonVisiibility = false;
+                                });
+                              },
+                              child: Align(
+                                  alignment: Alignment(0, 0.94),
+                                  child: Visibility(
+                                      visible: arrowDownVisibility,
+                                      child: Container(
+                                        width: 30.0,
+                                        margin: EdgeInsets.fromLTRB(0, 0, 0, 3),
+                                        child: Icon(
+                                          Icons.arrow_downward,
+                                        ),
+                                      )))),
+                        ],
+                      )
+                    ]),
+                  ))),
         ]),
       ),
     );
