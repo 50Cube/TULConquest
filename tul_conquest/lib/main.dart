@@ -232,19 +232,19 @@ class _MyAppState extends State<MyApp> {
               // ROZWIN
               alignment: Alignment(0, 0.8),
               child: Visibility(
-                  visible: true,
+                  visible: rozwinButtonVisibility,
                   child: AnimatedContainer(
                     duration: Duration(milliseconds: 350),
                     height: rozwinButtonHeight,
                     width: 250.0,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
+                      borderRadius: BorderRadius.circular(12.0),
                       color: Colors.white,
                       border: Border.all(width: 2.0, color: Colors.black),
                     ),
                     child: Stack(
                         children: <Widget>[
-                      InkWell(
+                          GestureDetector(
                           // SPRAWDZ
                           onTap: () {
                             setState(() {});
@@ -254,16 +254,18 @@ class _MyAppState extends State<MyApp> {
                             child: Visibility(
                               visible: sprawdzButtonVisiibility,
                               child: Container(
-                                width: 120.0,
+                                width: 150.0,
                                 decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12.0),
                                   border: Border.all(
                                       color: Colors.black, width: 2.0),
                                 ),
                                 child: Text(
                                   'SPRAWDŹ',
-                                  //textAlign: TextAlign.center,
+                                  textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontSize: 25.0,
+                                    letterSpacing: 1.0,
                                   ),
                                 ),
                               ),
@@ -271,7 +273,7 @@ class _MyAppState extends State<MyApp> {
                           )),
                       Row(
                         children: <Widget>[
-                          InkWell(
+                          GestureDetector(
                               // NAPIS ROZWIN
                               onTap: () {
                                 setState(() {
@@ -299,7 +301,7 @@ class _MyAppState extends State<MyApp> {
                                   ),
                                 ),
                               )),
-                          InkWell(
+                          GestureDetector(
                               // STRZALKA W GORE
                               onTap: () {
                                 setState(() {
@@ -322,7 +324,7 @@ class _MyAppState extends State<MyApp> {
                                           Icons.arrow_upward,
                                         ),
                                       )))),
-                          InkWell(
+                          GestureDetector(
                               // NAPIS ZWIN
                               onTap: () {
                                 setState(() {
@@ -350,7 +352,7 @@ class _MyAppState extends State<MyApp> {
                                   ),
                                 ),
                               )),
-                          InkWell(
+                          GestureDetector(
                               // STRZALKA W DOL
                               onTap: () {
                                 setState(() {

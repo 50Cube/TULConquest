@@ -40,6 +40,10 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app requires access to your location for FilledStacks tutorial.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This app requires access to your location for FilledStacks tutorial.</string>
 	<false/>
 </dict>
 </plist>
