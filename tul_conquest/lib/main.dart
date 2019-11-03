@@ -23,10 +23,11 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('Znacznik'),
         draggable: false,
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
-          controller.animateCamera(
-              CameraUpdate.newLatLngZoom(LatLng(51.746, 19.453), 19.0));
           setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(51.746, 19.453), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
           });
         },
@@ -46,6 +47,7 @@ class _MyAppState extends State<MyApp> {
   bool arrowDownVisibility = false;
   bool zwinTextVisibility = false;
   bool sprawdzButtonVisiibility = false;
+  bool textFieldVisibility = false;
 
   Location location = Location();
   LocationData currentLocation;
@@ -244,8 +246,23 @@ class _MyAppState extends State<MyApp> {
                     ),
                     child: Stack(
                         children: <Widget>[
-                          GestureDetector(
-                          // SPRAWDZ
+                          Align(                  // POLE DO WPISYWANIA
+                              alignment: Alignment(0,0.3),
+                              child: Visibility(
+                                visible: textFieldVisibility,
+                                  child: Container(
+                                  width: 200,
+                                  height: 40,
+                                  child: TextField(
+                                    textAlign: TextAlign.center,
+                                    maxLength: 20,
+                                    decoration: InputDecoration(
+                                      hintText: 'Wpisz odpowiedź',
+                                    ),
+                                  )
+                              ))),
+
+                          GestureDetector(         // SPRAWDZ
                           onTap: () {
                             setState(() {});
                           },
@@ -283,6 +300,7 @@ class _MyAppState extends State<MyApp> {
                                   arrowDownVisibility = true;
                                   rozwinButtonHeight = 440.0;
                                   sprawdzButtonVisiibility = true;
+                                  textFieldVisibility = true;
                                 });
                               },
                               child: Align(
@@ -311,6 +329,7 @@ class _MyAppState extends State<MyApp> {
                                   arrowDownVisibility = true;
                                   rozwinButtonHeight = 440.0;
                                   sprawdzButtonVisiibility = true;
+                                  textFieldVisibility = true;
                                 });
                               },
                               child: Align(
@@ -334,6 +353,7 @@ class _MyAppState extends State<MyApp> {
                                   arrowUpVisibility = true;
                                   rozwinButtonHeight = 40.0;
                                   sprawdzButtonVisiibility = false;
+                                  textFieldVisibility = false;
                                 });
                               },
                               child: Align(
@@ -362,6 +382,7 @@ class _MyAppState extends State<MyApp> {
                                   arrowUpVisibility = true;
                                   rozwinButtonHeight = 40.0;
                                   sprawdzButtonVisiibility = false;
+                                  textFieldVisibility = false;
                                 });
                               },
                               child: Align(
