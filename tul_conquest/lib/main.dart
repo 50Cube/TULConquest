@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:tul_conquest/markers.dart';
 import 'package:location/location.dart';
+import 'package:geolocator/geolocator.dart';
 
 void main() => runApp(MyApp());
 
@@ -29,6 +30,7 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.746, 19.453), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            funcThatMakesAsyncCall();
           });
         },
         position: LatLng(51.746, 19.453)));
@@ -52,6 +54,20 @@ class _MyAppState extends State<MyApp> {
   Location location = Location();
   LocationData currentLocation;
 
+//  Future<double> dist() async{
+//    return await Geolocator().distanceBetween(52.2165157, 6.9437819, 52.3546274, 4.8285838);
+//  }
+
+  double dist=0;
+  Future funcThatMakesAsyncCall() async {
+    var result = await Geolocator().distanceBetween(currentLocation.latitude, currentLocation.longitude, 51.746, 19.453);
+    print(result);
+    print("-----------");
+    setState(() {
+      dist = result;
+    });
+  }
+
   @override
   void initState() {
     // TODO: implement initState
@@ -61,6 +77,7 @@ class _MyAppState extends State<MyApp> {
         currentLocation = value;
       });
     });
+//    funcThatMakesAsyncCall();
   }
 
   void _onMapCreated(GoogleMapController controller) {
@@ -141,13 +158,19 @@ class _MyAppState extends State<MyApp> {
               markers: Set.from(znaczniki),
             ),
           ),
-//              new Align(
-//                alignment: Alignment.center,
-//                child: Container(
-//                    child:
-//                    Text("Location" + currentLocation.latitude.toString() + " " + currentLocation.longitude.toString())
-//                )
-//              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    //funcThatMakesAsyncCall();
+                  });
+                },
+                  child: Align(
+                alignment: Alignment.center,
+                child: Container(
+                    child:
+                  Text("Location" + dist.toString())
+                )
+              )),
           new Align(
               alignment: Alignment(0.93, -0.78),
               child: InkWell(
