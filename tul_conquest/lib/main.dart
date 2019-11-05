@@ -28,13 +28,388 @@ class _MyAppState extends State<MyApp> {
         onTap: () {
           setState(() {
             controller.animateCamera(
-                CameraUpdate.newLatLngZoom(LatLng(51.746, 19.453), 19.0));
+                CameraUpdate.newLatLngZoom(LatLng(51.747000, 19.451992), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
             funcThatMakesAsyncCall();
           });
         },
-        position: LatLng(51.746, 19.453)));
+        position: LatLng(51.747000, 19.451992)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('Znacznik2'),
+        draggable: false,
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(51.747344, 19.455063), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          });
+        },
+        position: LatLng(51.747344, 19.455063)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('Zegarek'),
+        draggable: false,
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(51.745060, 19.453975), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          });
+        },
+        position: LatLng(51.745060, 19.453975)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('Klodka'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng( 51.747794, 19.454366), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng( 51.747794, 19.454366)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('Posag'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng( 51.746690, 19.453912), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng( 51.746690, 19.453912)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('Dziekanat'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(  51.747465, 19.455995), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng(  51.747465, 19.455995)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('Budownictwo'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(  51.747634, 19.451893), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng(  51.747634, 19.451893)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('Dzial transferu technologi'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(  51.748952, 19.454690), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng(  51.748952, 19.454690)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('Rektorat PL'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(   51.748810, 19.455350), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng(   51.748810, 19.455350)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('Rektorat PL'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(  51.747708, 19.453324), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng(   51.747708, 19.453324)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('Rozdzielnia'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(   51.746909, 19.456282), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng(    51.746909,19.456282)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('CTI'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(   51.747198, 19.456007), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng( 51.747198,19.456007)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('BudynekBPokoj15'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(    51.746465, 19.455791), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng(  51.746465,19.455791)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('BudynekBPokoj14'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(  51.746409,19.455395), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng(  51.746409,19.455395)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('drogowskazybiblio'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(  51.745674,19.455323), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng(   51.745674,19.455323)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('b8regulaminwyjazd'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(  51.747571,19.450931), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng(  51.747571,19.450931)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('Palac'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(   51.748825,19.455342), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng( 51.748825,19.455342)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('Kropka'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(51.747704,19.452855), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng(51.747704,19.452855)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('drukA4'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(  51.747965,19.451947), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng(  51.747965,19.451947)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('szlabanWyjazd'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng( 51.747796, 19.450893), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng( 51.747796, 19.450893)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('bezLipy'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng( 51.748666, 19.453617), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng( 51.748666, 19.453617)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('pomnikNatury'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng( 51.748359, 19.455163), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng( 51.748359, 19.455163)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('B14UEdofinansowanie'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng( 51.746408, 19.455676), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng(51.746408, 19.455676)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('wjazdodwolczanskiej5m'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(  51.748300, 19.456389), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng( 51.748300, 19.456389)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('rainbowtours'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(  51.748921,  19.456253), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng( 51.748921,  19.456253)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('papiernictwo'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(51.746006, 19.454548), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng(51.746006, 19.454548)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('posag'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(51.748593, 19.453803), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng(51.748593, 19.453803)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('przywyjezdzie na wolczanska'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(51.746099, 19.456230), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+          }
+          );
+        },
+        position: LatLng(51.746099, 19.456230)));
   }
+
 
   bool normalMapButtonVisibility = false;
   bool satelliteMapButtonVisibility = false;
