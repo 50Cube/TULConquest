@@ -30,7 +30,6 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.747000, 19.451992), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            funcThatMakesAsyncCall();
           });
         },
         position: LatLng(51.747000, 19.451992)));
@@ -55,6 +54,9 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.745060, 19.453975), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "Która godzina?\n\n(Wprowadź godzinę w formacie hh:mm)";
+            kluczZagadki = "12:10";
+            funcThatMakesAsyncCall();
           });
         },
         position: LatLng(51.745060, 19.453975)));
@@ -68,6 +70,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng( 51.747794, 19.454366), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "Data na kłódce";
+            kluczZagadki = "20.03";
           }
           );
         },
@@ -426,6 +430,10 @@ class _MyAppState extends State<MyApp> {
   bool sprawdzButtonVisiibility = false;
   bool textFieldVisibility = false;
 
+  String tekstZagadki = "Kwestionariusz";
+  String kluczZagadki = "HeRb";
+  bool tekstZagadkiVisibility = false;
+
   Location location = Location();
   LocationData currentLocation;
 
@@ -433,11 +441,9 @@ class _MyAppState extends State<MyApp> {
 //    return await Geolocator().distanceBetween(52.2165157, 6.9437819, 52.3546274, 4.8285838);
 //  }
 
-  double dist=0;
+  double dist = 0;
   Future funcThatMakesAsyncCall() async {
     var result = await Geolocator().distanceBetween(currentLocation.latitude, currentLocation.longitude, 51.746, 19.453);
-    print(result);
-    print("-----------");
     setState(() {
       dist = result;
     });
@@ -452,7 +458,6 @@ class _MyAppState extends State<MyApp> {
         currentLocation = value;
       });
     });
-//    funcThatMakesAsyncCall();
   }
 
   void _onMapCreated(GoogleMapController controller) {
@@ -628,8 +633,7 @@ class _MyAppState extends State<MyApp> {
                     )),
               )),
 
-          Align(
-              // ROZWIN
+          Align(                                // ROZWIN
               alignment: Alignment(0, 0.8),
               child: Visibility(
                   visible: rozwinButtonVisibility,
@@ -644,6 +648,26 @@ class _MyAppState extends State<MyApp> {
                     ),
                     child: Stack(
                         children: <Widget>[
+                          Align(                  // TEKST ZAGADKI
+                            alignment: Alignment(0, -0.88),
+                            child: Visibility(
+                              visible: tekstZagadkiVisibility,
+                              child: Container(
+                                height: 200.0,
+                                width: 210.0,
+//                                decoration: BoxDecoration(
+//                                  border: Border.all(width: 0.5, color: Colors.black),
+//                                  borderRadius: BorderRadius.circular(10.0)
+//                                ),
+                                child: Text(
+                                  tekstZagadki,
+                                  style: TextStyle(
+                                    fontSize: 20.0
+                                  )
+                                )
+                              )
+                            )
+                          ),
                           Align(                  // POLE DO WPISYWANIA
                               alignment: Alignment(0,0.3),
                               child: Visibility(
@@ -699,6 +723,7 @@ class _MyAppState extends State<MyApp> {
                                   rozwinButtonHeight = 440.0;
                                   sprawdzButtonVisiibility = true;
                                   textFieldVisibility = true;
+                                  tekstZagadkiVisibility = true;
                                 });
                               },
                               child: Align(
@@ -728,6 +753,7 @@ class _MyAppState extends State<MyApp> {
                                   rozwinButtonHeight = 440.0;
                                   sprawdzButtonVisiibility = true;
                                   textFieldVisibility = true;
+                                  tekstZagadkiVisibility = true;
                                 });
                               },
                               child: Align(
@@ -752,6 +778,7 @@ class _MyAppState extends State<MyApp> {
                                   rozwinButtonHeight = 40.0;
                                   sprawdzButtonVisiibility = false;
                                   textFieldVisibility = false;
+                                  tekstZagadkiVisibility = false;
                                 });
                               },
                               child: Align(
@@ -781,6 +808,7 @@ class _MyAppState extends State<MyApp> {
                                   rozwinButtonHeight = 40.0;
                                   sprawdzButtonVisiibility = false;
                                   textFieldVisibility = false;
+                                  tekstZagadkiVisibility = false;
                                 });
                               },
                               child: Align(
