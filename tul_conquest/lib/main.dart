@@ -30,6 +30,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.747000, 19.451992), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.747000, 19.451992);
+            funcThatMakesAsyncCall();
           });
         },
         position: LatLng(51.747000, 19.451992)));
@@ -42,6 +46,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.747344, 19.455063), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.747344, 19.455063);
+            funcThatMakesAsyncCall();
           });
         },
         position: LatLng(51.747344, 19.455063)));
@@ -56,6 +64,7 @@ class _MyAppState extends State<MyApp> {
             rozwinButtonVisibility = !rozwinButtonVisibility;
             tekstZagadki = "Która godzina?\n\n(Wprowadź godzinę w formacie hh:mm)";
             kluczZagadki = "12:10";
+            lokacjaZnacznika = new LatLng(51.745060, 19.453975);
             funcThatMakesAsyncCall();
           });
         },
@@ -72,6 +81,8 @@ class _MyAppState extends State<MyApp> {
             rozwinButtonVisibility = !rozwinButtonVisibility;
             tekstZagadki = "Data na kłódce";
             kluczZagadki = "20.03";
+            lokacjaZnacznika = new LatLng(51.747794, 19.454366);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -86,6 +97,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng( 51.746690, 19.453912), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.746690, 19.453912);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -100,6 +115,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.747465, 19.455995), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.747465, 19.455995);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -114,6 +133,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.747634, 19.451893), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.747634, 19.451893);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -128,6 +151,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.748952, 19.454690), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.748952, 19.454690);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -142,6 +169,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(   51.748810, 19.455350), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.748810, 19.455350);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -156,6 +187,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.747708, 19.453324), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.747708, 19.453324);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -170,6 +205,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(   51.746909, 19.456282), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.746909, 19.456282);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -184,6 +223,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(   51.747198, 19.456007), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.747198, 19.456007);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -198,6 +241,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(    51.746465, 19.455791), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.746465, 19.455791);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -212,6 +259,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.746409,19.455395), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.746409, 19.455395);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -226,6 +277,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.745674,19.455323), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.745674, 19.455323);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -240,6 +295,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.747571,19.450931), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.747571, 19.450931);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -254,6 +313,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(   51.748825,19.455342), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.748825, 19.455342);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -268,6 +331,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.747704,19.452855), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.747704, 19.452855);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -282,6 +349,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.747965,19.451947), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.747965, 19.451947);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -296,6 +367,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng( 51.747796, 19.450893), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.747796, 19.450893);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -310,6 +385,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng( 51.748666, 19.453617), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.748666, 19.453617);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -324,6 +403,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng( 51.748359, 19.455163), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.748359, 19.455163);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -338,6 +421,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng( 51.746408, 19.455676), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.746408, 19.455676);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -352,6 +439,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.748300, 19.456389), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.748300, 19.456389);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -366,6 +457,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.748921,  19.456253), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.748921, 19.456253);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -380,6 +475,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.746006, 19.454548), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.746006, 19.454548);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -394,6 +493,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.748593, 19.453803), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.748593, 19.453803);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -408,6 +511,10 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.746099, 19.456230), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "";
+            kluczZagadki = "";
+            lokacjaZnacznika = new LatLng(51.746099, 19.456230);
+            funcThatMakesAsyncCall();
           }
           );
         },
@@ -434,6 +541,8 @@ class _MyAppState extends State<MyApp> {
   String kluczZagadki = "HeRb";
   bool tekstZagadkiVisibility = false;
 
+  LatLng lokacjaZnacznika = new LatLng(0, 0);
+
   Location location = Location();
   LocationData currentLocation;
 
@@ -443,7 +552,7 @@ class _MyAppState extends State<MyApp> {
 
   double dist = 0;
   Future funcThatMakesAsyncCall() async {
-    var result = await Geolocator().distanceBetween(currentLocation.latitude, currentLocation.longitude, 51.746, 19.453);
+    var result = await Geolocator().distanceBetween(currentLocation.latitude, currentLocation.longitude, lokacjaZnacznika.latitude, lokacjaZnacznika.longitude);
     setState(() {
       dist = result;
     });
@@ -530,7 +639,7 @@ class _MyAppState extends State<MyApp> {
               initialCameraPosition: CameraPosition(
                 bearing: 0,
                 target: _center,
-                zoom: 19.0,
+                zoom: 18.0,
               ),
               myLocationButtonEnabled: true,
               myLocationEnabled: true,
@@ -538,19 +647,13 @@ class _MyAppState extends State<MyApp> {
               markers: Set.from(znaczniki),
             ),
           ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    //funcThatMakesAsyncCall();
-                  });
-                },
-                  child: Align(
+              Align(
                 alignment: Alignment.center,
                 child: Container(
                     child:
                   Text("Location" + dist.toString())
                 )
-              )),
+              ),
           new Align(
               alignment: Alignment(0.93, -0.78),
               child: InkWell(
