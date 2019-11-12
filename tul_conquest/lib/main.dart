@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
   void dodajZnacznikiDoListy(
       GoogleMapController controller, List<Marker> znaczniki) {
     znaczniki.add(Marker(
-        markerId: MarkerId('Znacznik'),
+        markerId: MarkerId('fitfabric'),
         draggable: false,
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
@@ -30,15 +30,15 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.747000, 19.451992), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Dyscyplina sportu";
+            kluczZagadki = "Squash";
             lokacjaZnacznika = new LatLng(51.747000, 19.451992);
             funcThatMakesAsyncCall();
           });
         },
         position: LatLng(51.747000, 19.451992)));
     znaczniki.add(Marker(
-        markerId: MarkerId('Znacznik2'),
+        markerId: MarkerId('galanz'),
         draggable: false,
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
@@ -46,8 +46,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.747344, 19.455063), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "_lan_";
+            kluczZagadki = "Gaz";
             lokacjaZnacznika = new LatLng(51.747344, 19.455063);
             funcThatMakesAsyncCall();
           });
@@ -97,8 +97,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng( 51.746690, 19.453912), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Nazwisko rektora PŁ";
+            kluczZagadki = "Krysiński";
             lokacjaZnacznika = new LatLng(51.746690, 19.453912);
             funcThatMakesAsyncCall();
           }
@@ -115,8 +115,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.747465, 19.455995), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Dziekanat ... Logistyki";
+            kluczZagadki = "Kolegium";
             lokacjaZnacznika = new LatLng(51.747465, 19.455995);
             funcThatMakesAsyncCall();
           }
@@ -133,8 +133,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.747634, 19.451893), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Ilość tabliczek:";
+            kluczZagadki = "9";
             lokacjaZnacznika = new LatLng(51.747634, 19.451893);
             funcThatMakesAsyncCall();
           }
@@ -151,8 +151,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.748952, 19.454690), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Jaka administracja?";
+            kluczZagadki = "Rektorska";
             lokacjaZnacznika = new LatLng(51.748952, 19.454690);
             funcThatMakesAsyncCall();
           }
@@ -169,8 +169,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(   51.748810, 19.455350), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Kto był właścicielem willi?";
+            kluczZagadki = "Reinhold Richter";
             lokacjaZnacznika = new LatLng(51.748810, 19.455350);
             funcThatMakesAsyncCall();
           }
@@ -178,7 +178,7 @@ class _MyAppState extends State<MyApp> {
         },
         position: LatLng(   51.748810, 19.455350)));
     znaczniki.add(Marker(
-        markerId: MarkerId('Rektorat PL'),
+        markerId: MarkerId('szambo'),
         draggable: false,
 
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
@@ -187,8 +187,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.747708, 19.453324), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Rok";
+            kluczZagadki = "1558";
             lokacjaZnacznika = new LatLng(51.747708, 19.453324);
             funcThatMakesAsyncCall();
           }
@@ -205,8 +205,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(   51.746909, 19.456282), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Ile V?";
+            kluczZagadki = "400";
             lokacjaZnacznika = new LatLng(51.746909, 19.456282);
             funcThatMakesAsyncCall();
           }
@@ -223,8 +223,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(   51.747198, 19.456007), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Wersja dydaktyki";
+            kluczZagadki = "2.0";
             lokacjaZnacznika = new LatLng(51.747198, 19.456007);
             funcThatMakesAsyncCall();
           }
@@ -241,8 +241,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(    51.746465, 19.455791), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Numer budynku";
+            kluczZagadki = "B15";
             lokacjaZnacznika = new LatLng(51.746465, 19.455791);
             funcThatMakesAsyncCall();
           }
@@ -259,8 +259,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.746409,19.455395), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Kto chroni obiekt?";
+            kluczZagadki = "Magnum";
             lokacjaZnacznika = new LatLng(51.746409, 19.455395);
             funcThatMakesAsyncCall();
           }
@@ -277,8 +277,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.745674,19.455323), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Liczba drogowskazów";
+            kluczZagadki = "6";
             lokacjaZnacznika = new LatLng(51.745674, 19.455323);
             funcThatMakesAsyncCall();
           }
@@ -295,32 +295,14 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.747571,19.450931), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Telefon do Dowódcy Straży Politechniki Łódzkiej";
+            kluczZagadki = "631 29 07";
             lokacjaZnacznika = new LatLng(51.747571, 19.450931);
             funcThatMakesAsyncCall();
           }
           );
         },
         position: LatLng(  51.747571,19.450931)));
-    znaczniki.add(Marker(
-        markerId: MarkerId('Palac'),
-        draggable: false,
-
-        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
-        onTap: () {
-          setState(() {
-            controller.animateCamera(
-                CameraUpdate.newLatLngZoom(LatLng(   51.748825,19.455342), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
-            lokacjaZnacznika = new LatLng(51.748825, 19.455342);
-            funcThatMakesAsyncCall();
-          }
-          );
-        },
-        position: LatLng( 51.748825,19.455342)));
     znaczniki.add(Marker(
         markerId: MarkerId('Kropka'),
         draggable: false,
@@ -331,8 +313,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.747704,19.452855), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Kto zaprasza na zakupy?";
+            kluczZagadki = "Kropka";
             lokacjaZnacznika = new LatLng(51.747704, 19.452855);
             funcThatMakesAsyncCall();
           }
@@ -349,8 +331,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.747965,19.451947), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Największy format druku";
+            kluczZagadki = "A0";
             lokacjaZnacznika = new LatLng(51.747965, 19.451947);
             funcThatMakesAsyncCall();
           }
@@ -367,8 +349,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng( 51.747796, 19.450893), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Opłata za zgubiony bilet";
+            kluczZagadki = "50";
             lokacjaZnacznika = new LatLng(51.747796, 19.450893);
             funcThatMakesAsyncCall();
           }
@@ -385,8 +367,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng( 51.748666, 19.453617), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Bez";
+            kluczZagadki = "Lipy";
             lokacjaZnacznika = new LatLng(51.748666, 19.453617);
             funcThatMakesAsyncCall();
           }
@@ -403,8 +385,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng( 51.748359, 19.455163), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Podstawa bryły tworzonej przez podpory drzewa to:";
+            kluczZagadki = "Trójkąt";
             lokacjaZnacznika = new LatLng(51.748359, 19.455163);
             funcThatMakesAsyncCall();
           }
@@ -412,18 +394,18 @@ class _MyAppState extends State<MyApp> {
         },
         position: LatLng( 51.748359, 19.455163)));
     znaczniki.add(Marker(
-        markerId: MarkerId('B14UEdofinansowanie'),
+        markerId: MarkerId('Instytut przeplywowy'),
         draggable: false,
 
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
             controller.animateCamera(
-                CameraUpdate.newLatLngZoom(LatLng( 51.746408, 19.455676), 19.0));
+                CameraUpdate.newLatLngZoom(LatLng( 51.746696, 19.454084), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
-            lokacjaZnacznika = new LatLng(51.746408, 19.455676);
+            tekstZagadki = "Adres URL instytutu:";
+            kluczZagadki = "www.imp.p.lodz.pl";
+            lokacjaZnacznika = new LatLng(51.746696, 19.454084);
             funcThatMakesAsyncCall();
           }
           );
@@ -439,8 +421,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.748300, 19.456389), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Bezpieczny dystans";
+            kluczZagadki = "5m";
             lokacjaZnacznika = new LatLng(51.748300, 19.456389);
             funcThatMakesAsyncCall();
           }
@@ -457,8 +439,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.748921,  19.456253), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Znajdź tęczę";
+            kluczZagadki = "Rainbow";
             lokacjaZnacznika = new LatLng(51.748921, 19.456253);
             funcThatMakesAsyncCall();
           }
@@ -475,8 +457,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.746006, 19.454548), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Instytut papiernictwa i ... Politechniki Łódzkiej";
+            kluczZagadki = "Poligrafii";
             lokacjaZnacznika = new LatLng(51.746006, 19.454548);
             funcThatMakesAsyncCall();
           }
@@ -484,7 +466,7 @@ class _MyAppState extends State<MyApp> {
         },
         position: LatLng(51.746006, 19.454548)));
     znaczniki.add(Marker(
-        markerId: MarkerId('posag'),
+        markerId: MarkerId('posagwlesie'),
         draggable: false,
 
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
@@ -493,8 +475,8 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.748593, 19.453803), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Idzie zima";
+            kluczZagadki = "Załóż czapkę";
             lokacjaZnacznika = new LatLng(51.748593, 19.453803);
             funcThatMakesAsyncCall();
           }
@@ -511,14 +493,104 @@ class _MyAppState extends State<MyApp> {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.746099, 19.456230), 19.0));
             rozwinButtonVisibility = !rozwinButtonVisibility;
-            tekstZagadki = "";
-            kluczZagadki = "";
+            tekstZagadki = "Ilość słów";
+            kluczZagadki = "8";
             lokacjaZnacznika = new LatLng(51.746099, 19.456230);
             funcThatMakesAsyncCall();
           }
           );
         },
         position: LatLng(51.746099, 19.456230)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('przybiblotece'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(51.745681, 19.453580), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "Ilość kafelków w drzwiach";
+            kluczZagadki = "24";
+            lokacjaZnacznika = new LatLng(51.745681, 19.453580);
+            funcThatMakesAsyncCall();
+          }
+          );
+        },
+        position: LatLng(51.745681, 19.453580)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('nfz'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(51.747209, 19.455656), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "Ile godzin dziennie czynne";
+            kluczZagadki = "10";
+            lokacjaZnacznika = new LatLng(51.747209, 19.455656);
+            funcThatMakesAsyncCall();
+          }
+          );
+        },
+        position: LatLng(51.747209, 19.455656)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('przylodexie'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(51.747127, 19.453993), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "Rok:";
+            kluczZagadki = "2004";
+            lokacjaZnacznika = new LatLng(51.747127, 19.453993);
+            funcThatMakesAsyncCall();
+          }
+          );
+        },
+        position: LatLng(51.747127, 19.453993)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('zporr'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(51.745913, 19.455619), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "Skrót na tablicy";
+            kluczZagadki = "ZPORR";
+            lokacjaZnacznika = new LatLng(51.745913, 19.455619);
+            funcThatMakesAsyncCall();
+          }
+          );
+        },
+        position: LatLng(51.745913, 19.455619)));
+    znaczniki.add(Marker(
+        markerId: MarkerId('cj'),
+        draggable: false,
+
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        onTap: () {
+          setState(() {
+            controller.animateCamera(
+                CameraUpdate.newLatLngZoom(LatLng(51.745371, 19.451457), 19.0));
+            rozwinButtonVisibility = !rozwinButtonVisibility;
+            tekstZagadki = "W razie niebezpiecześtwa ...";
+            kluczZagadki = "Zbić szybkę";
+            lokacjaZnacznika = new LatLng(51.745371, 19.451457);
+            funcThatMakesAsyncCall();
+          }
+          );
+        },
+        position: LatLng(51.745371, 19.451457)));
   }
 
 
@@ -546,9 +618,6 @@ class _MyAppState extends State<MyApp> {
   Location location = Location();
   LocationData currentLocation;
 
-//  Future<double> dist() async{
-//    return await Geolocator().distanceBetween(52.2165157, 6.9437819, 52.3546274, 4.8285838);
-//  }
 
   double dist = 0;
   Future funcThatMakesAsyncCall() async {
