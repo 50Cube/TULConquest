@@ -410,7 +410,7 @@ class _MyAppState extends State<MyApp> {
           }
           );
         },
-        position: LatLng(51.746408, 19.455676)));
+        position: LatLng(51.746696, 19.454084)));
     znaczniki.add(Marker(
         markerId: MarkerId('wjazdodwolczanskiej5m'),
         draggable: false,
@@ -862,7 +862,7 @@ class _MyAppState extends State<MyApp> {
                             setState(() {
                               if (dist > 100)
                                 tekstPoSprawdzeniu = "Podejdź bliżej";
-                              else if (wprowadzonyTekst.text.toUpperCase() == kluczZagadki) {
+                              else if (wprowadzonyTekst.text.toUpperCase().trimLeft().trimRight() == kluczZagadki.toUpperCase().trimLeft().trimRight()) {
                                 tekstPoSprawdzeniu = "DOBRZE"; }
                                 else tekstPoSprawdzeniu = "ŹLE";
                               tekstPoSprawdzeniuVisibility = true;
