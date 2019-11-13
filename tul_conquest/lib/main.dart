@@ -609,6 +609,10 @@ class _MyAppState extends State<MyApp> {
   bool sprawdzButtonVisiibility = false;
   bool textFieldVisibility = false;
 
+  bool tekstPoSprawdzeniuVisibility = false;
+  String tekstPoSprawdzeniu = "Podejdź bliżej";
+  final wprowadzonyTekst = TextEditingController();
+
   String tekstZagadki = "Kwestionariusz";
   String kluczZagadki = "HeRb";
   bool tekstZagadkiVisibility = false;
@@ -720,7 +724,7 @@ class _MyAppState extends State<MyApp> {
                 alignment: Alignment.center,
                 child: Container(
                     child:
-                  Text("Location" + dist.toString())
+                  Text("Location" + dist.toString() + "  " + wprowadzonyTekst.text)
                 )
               ),
           new Align(
@@ -827,10 +831,6 @@ class _MyAppState extends State<MyApp> {
                               child: Container(
                                 height: 200.0,
                                 width: 210.0,
-//                                decoration: BoxDecoration(
-//                                  border: Border.all(width: 0.5, color: Colors.black),
-//                                  borderRadius: BorderRadius.circular(10.0)
-//                                ),
                                 child: Text(
                                   tekstZagadki,
                                   style: TextStyle(
@@ -850,6 +850,7 @@ class _MyAppState extends State<MyApp> {
                                   child: TextField(
                                     textAlign: TextAlign.center,
                                     maxLength: 20,
+                                    controller: wprowadzonyTekst,
                                     decoration: InputDecoration(
                                       hintText: 'Wpisz odpowiedź',
                                     ),
@@ -858,7 +859,14 @@ class _MyAppState extends State<MyApp> {
 
                           GestureDetector(         // SPRAWDZ
                           onTap: () {
-                            setState(() {});
+                            setState(() {
+                              if (dist > 100)
+                                tekstPoSprawdzeniu = "Podejdź bliżej";
+                              else if (wprowadzonyTekst.text.toUpperCase() == kluczZagadki) {
+                                tekstPoSprawdzeniu = "DOBRZE"; }
+                                else tekstPoSprawdzeniu = "ŹLE";
+                              tekstPoSprawdzeniuVisibility = true;
+                            });
                           },
                           child: Align(
                             alignment: Alignment(0, 0.6),
@@ -882,6 +890,24 @@ class _MyAppState extends State<MyApp> {
                               ),
                             ),
                           )),
+                      Align(                            // PODEJDŹ BLIŻEJ
+                        alignment: Alignment(0, 0.82),
+                        child: Visibility(
+                          visible: tekstPoSprawdzeniuVisibility,
+                          child: Container(
+                            width: 150,
+                            height: 35,
+                            child: Text(
+                                tekstPoSprawdzeniu,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Colors.red
+                              )
+                            )
+                          )
+                        )
+                      ),
                       Row(
                         children: <Widget>[
                           GestureDetector(
@@ -951,6 +977,7 @@ class _MyAppState extends State<MyApp> {
                                   sprawdzButtonVisiibility = false;
                                   textFieldVisibility = false;
                                   tekstZagadkiVisibility = false;
+                                  tekstPoSprawdzeniuVisibility = false;
                                 });
                               },
                               child: Align(
@@ -981,6 +1008,7 @@ class _MyAppState extends State<MyApp> {
                                   sprawdzButtonVisiibility = false;
                                   textFieldVisibility = false;
                                   tekstZagadkiVisibility = false;
+                                  tekstPoSprawdzeniuVisibility = false;
                                 });
                               },
                               child: Align(
