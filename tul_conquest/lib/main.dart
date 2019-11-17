@@ -4,6 +4,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:tul_conquest/markers.dart';
 import 'package:location/location.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:vibration/vibration.dart';
 
 void main() => runApp(MyApp());
 
@@ -701,7 +702,7 @@ class _MyAppState extends State<MyApp> {
                           fontSize: 22.0,
                         )),
                     onTap: () {
-                      SystemNavigator.pop();
+                      //SystemNavigator.pop();
                     })
               ])),
         ),
@@ -720,13 +721,13 @@ class _MyAppState extends State<MyApp> {
               markers: Set.from(znaczniki),
             ),
           ),
-              Align(
-                alignment: Alignment.center,
-                child: Container(
-                    child:
-                  Text("Location" + dist.toString() + "  " + wprowadzonyTekst.text)
-                )
-              ),
+//              Align(
+//                alignment: Alignment.center,
+//                child: Container(
+//                    child:
+//                  Text("Location" + dist.toString() + "  " + wprowadzonyTekst.text)
+//                )
+//              ),
           new Align(
               alignment: Alignment(0.93, -0.78),
               child: InkWell(
@@ -860,11 +861,16 @@ class _MyAppState extends State<MyApp> {
                           GestureDetector(         // SPRAWDZ
                           onTap: () {
                             setState(() {
-                              if (dist > 100)
+                              if (dist > 100) {
+                                Vibration.vibrate(duration: 500);
                                 tekstPoSprawdzeniu = "Podejdź bliżej";
+                              }
                               else if (wprowadzonyTekst.text.toUpperCase().trimLeft().trimRight() == kluczZagadki.toUpperCase().trimLeft().trimRight()) {
                                 tekstPoSprawdzeniu = "DOBRZE"; }
-                                else tekstPoSprawdzeniu = "ŹLE";
+                                else {
+                                Vibration.vibrate(duration: 500);
+                                tekstPoSprawdzeniu = "ŹLE";
+                              }
                               tekstPoSprawdzeniuVisibility = true;
                             });
                           },
@@ -922,6 +928,7 @@ class _MyAppState extends State<MyApp> {
                                   sprawdzButtonVisiibility = true;
                                   textFieldVisibility = true;
                                   tekstZagadkiVisibility = true;
+                                  wprowadzonyTekst.text = "";
                                 });
                               },
                               child: Align(
@@ -952,6 +959,7 @@ class _MyAppState extends State<MyApp> {
                                   sprawdzButtonVisiibility = true;
                                   textFieldVisibility = true;
                                   tekstZagadkiVisibility = true;
+                                  wprowadzonyTekst.text = "";
                                 });
                               },
                               child: Align(
