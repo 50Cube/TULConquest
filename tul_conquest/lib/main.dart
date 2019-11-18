@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:tul_conquest/markers.dart';
 import 'package:location/location.dart';
@@ -30,11 +29,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.747000, 19.451992), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Dyscyplina sportu";
             kluczZagadki = "Squash";
             lokacjaZnacznika = new LatLng(51.747000, 19.451992);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           });
         },
         position: LatLng(51.747000, 19.451992)));
@@ -46,11 +47,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.747344, 19.455063), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "_lan_";
             kluczZagadki = "Gaz";
             lokacjaZnacznika = new LatLng(51.747344, 19.455063);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           });
         },
         position: LatLng(51.747344, 19.455063)));
@@ -62,11 +65,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.745060, 19.453975), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Która godzina?\n\n(Wprowadź godzinę w formacie hh:mm)";
             kluczZagadki = "12:10";
             lokacjaZnacznika = new LatLng(51.745060, 19.453975);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           });
         },
         position: LatLng(51.745060, 19.453975)));
@@ -79,11 +84,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng( 51.747794, 19.454366), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Data na kłódce";
             kluczZagadki = "20.03";
             lokacjaZnacznika = new LatLng(51.747794, 19.454366);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -97,11 +104,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng( 51.746690, 19.453912), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Nazwisko rektora PŁ";
             kluczZagadki = "Krysiński";
             lokacjaZnacznika = new LatLng(51.746690, 19.453912);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -115,11 +124,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.747465, 19.455995), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Dziekanat ... Logistyki";
             kluczZagadki = "Kolegium";
             lokacjaZnacznika = new LatLng(51.747465, 19.455995);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -133,11 +144,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.747634, 19.451893), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Ilość tabliczek:";
             kluczZagadki = "9";
             lokacjaZnacznika = new LatLng(51.747634, 19.451893);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -151,11 +164,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.748952, 19.454690), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Jaka administracja?";
             kluczZagadki = "Rektorska";
             lokacjaZnacznika = new LatLng(51.748952, 19.454690);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -169,11 +184,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(   51.748810, 19.455350), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Kto był właścicielem willi?";
             kluczZagadki = "Reinhold Richter";
             lokacjaZnacznika = new LatLng(51.748810, 19.455350);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -187,11 +204,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.747708, 19.453324), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Rok";
             kluczZagadki = "1558";
             lokacjaZnacznika = new LatLng(51.747708, 19.453324);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -205,11 +224,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(   51.746909, 19.456282), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Ile V?";
             kluczZagadki = "400";
             lokacjaZnacznika = new LatLng(51.746909, 19.456282);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -223,11 +244,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(   51.747198, 19.456007), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Wersja dydaktyki";
             kluczZagadki = "2.0";
             lokacjaZnacznika = new LatLng(51.747198, 19.456007);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -241,11 +264,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(    51.746465, 19.455791), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Numer budynku";
             kluczZagadki = "B15";
             lokacjaZnacznika = new LatLng(51.746465, 19.455791);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -259,11 +284,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.746409,19.455395), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Kto chroni obiekt?";
             kluczZagadki = "Magnum";
             lokacjaZnacznika = new LatLng(51.746409, 19.455395);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -277,11 +304,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.745674,19.455323), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Liczba drogowskazów";
             kluczZagadki = "6";
             lokacjaZnacznika = new LatLng(51.745674, 19.455323);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -295,11 +324,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.747571,19.450931), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Telefon do Dowódcy Straży Politechniki Łódzkiej";
             kluczZagadki = "631 29 07";
             lokacjaZnacznika = new LatLng(51.747571, 19.450931);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -313,11 +344,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.747704,19.452855), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Kto zaprasza na zakupy?";
             kluczZagadki = "Kropka";
             lokacjaZnacznika = new LatLng(51.747704, 19.452855);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -331,11 +364,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.747965,19.451947), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Największy format druku";
             kluczZagadki = "A0";
             lokacjaZnacznika = new LatLng(51.747965, 19.451947);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -349,11 +384,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng( 51.747796, 19.450893), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Opłata za zgubiony bilet";
             kluczZagadki = "50";
             lokacjaZnacznika = new LatLng(51.747796, 19.450893);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -367,11 +404,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng( 51.748666, 19.453617), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Bez";
             kluczZagadki = "Lipy";
             lokacjaZnacznika = new LatLng(51.748666, 19.453617);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -385,11 +424,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng( 51.748359, 19.455163), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Podstawa bryły tworzonej przez podpory drzewa to:";
             kluczZagadki = "Trójkąt";
             lokacjaZnacznika = new LatLng(51.748359, 19.455163);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -403,11 +444,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng( 51.746696, 19.454084), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Adres URL instytutu:";
             kluczZagadki = "www.imp.p.lodz.pl";
             lokacjaZnacznika = new LatLng(51.746696, 19.454084);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -421,11 +464,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.748300, 19.456389), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Bezpieczny dystans";
             kluczZagadki = "5m";
             lokacjaZnacznika = new LatLng(51.748300, 19.456389);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -439,11 +484,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(  51.748921,  19.456253), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Znajdź tęczę";
             kluczZagadki = "Rainbow";
             lokacjaZnacznika = new LatLng(51.748921, 19.456253);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -457,11 +504,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.746006, 19.454548), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Instytut papiernictwa i ... Politechniki Łódzkiej";
             kluczZagadki = "Poligrafii";
             lokacjaZnacznika = new LatLng(51.746006, 19.454548);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -475,11 +524,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.748593, 19.453803), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Idzie zima";
             kluczZagadki = "Załóż czapkę";
             lokacjaZnacznika = new LatLng(51.748593, 19.453803);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -493,11 +544,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.746099, 19.456230), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Ilość słów";
             kluczZagadki = "8";
             lokacjaZnacznika = new LatLng(51.746099, 19.456230);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -511,11 +564,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.745681, 19.453580), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Ilość kafelków w drzwiach";
             kluczZagadki = "24";
             lokacjaZnacznika = new LatLng(51.745681, 19.453580);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -529,11 +584,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.747209, 19.455656), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Ile godzin dziennie czynne";
             kluczZagadki = "10";
             lokacjaZnacznika = new LatLng(51.747209, 19.455656);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -547,11 +604,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.747127, 19.453993), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Rok:";
             kluczZagadki = "2004";
             lokacjaZnacznika = new LatLng(51.747127, 19.453993);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -565,11 +624,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.745913, 19.455619), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "Skrót na tablicy";
             kluczZagadki = "ZPORR";
             lokacjaZnacznika = new LatLng(51.745913, 19.455619);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -583,11 +644,13 @@ class _MyAppState extends State<MyApp> {
           setState(() {
             controller.animateCamera(
                 CameraUpdate.newLatLngZoom(LatLng(51.745371, 19.451457), 19.0));
-            rozwinButtonVisibility = !rozwinButtonVisibility;
+            rozwinButtonVisibility = true;
+            zamknijPanelVisibility = true;
             tekstZagadki = "W razie niebezpiecześtwa ...";
             kluczZagadki = "Zbić szybkę";
             lokacjaZnacznika = new LatLng(51.745371, 19.451457);
             funcThatMakesAsyncCall();
+            zamknijPanelPolozenie = 0.8;
           }
           );
         },
@@ -609,6 +672,9 @@ class _MyAppState extends State<MyApp> {
   bool zwinTextVisibility = false;
   bool sprawdzButtonVisiibility = false;
   bool textFieldVisibility = false;
+
+  bool zamknijPanelVisibility = false;
+  double zamknijPanelPolozenie = 0.8;
 
   bool tekstPoSprawdzeniuVisibility = false;
   String tekstPoSprawdzeniu = "Podejdź bliżej";
@@ -929,6 +995,7 @@ class _MyAppState extends State<MyApp> {
                                   textFieldVisibility = true;
                                   tekstZagadkiVisibility = true;
                                   wprowadzonyTekst.text = "";
+                                  zamknijPanelPolozenie = -0.42;
                                 });
                               },
                               child: Align(
@@ -960,6 +1027,7 @@ class _MyAppState extends State<MyApp> {
                                   textFieldVisibility = true;
                                   tekstZagadkiVisibility = true;
                                   wprowadzonyTekst.text = "";
+                                  zamknijPanelPolozenie = -0.42;
                                 });
                               },
                               child: Align(
@@ -973,6 +1041,7 @@ class _MyAppState extends State<MyApp> {
                                           Icons.arrow_upward,
                                         ),
                                       )))),
+
                           GestureDetector(
                               // NAPIS ZWIN
                               onTap: () {
@@ -986,6 +1055,7 @@ class _MyAppState extends State<MyApp> {
                                   textFieldVisibility = false;
                                   tekstZagadkiVisibility = false;
                                   tekstPoSprawdzeniuVisibility = false;
+                                  zamknijPanelPolozenie = 0.8;
                                 });
                               },
                               child: Align(
@@ -1017,6 +1087,7 @@ class _MyAppState extends State<MyApp> {
                                   textFieldVisibility = false;
                                   tekstZagadkiVisibility = false;
                                   tekstPoSprawdzeniuVisibility = false;
+                                  zamknijPanelPolozenie = 0.8;
                                 });
                               },
                               child: Align(
@@ -1034,6 +1105,36 @@ class _MyAppState extends State<MyApp> {
                       )
                     ]),
                   ))),
+          GestureDetector(                              // ZAMKNIECIE PANELU
+              onTap: () {
+                setState(() {
+                  rozwinButtonVisibility = false;
+                  zamknijPanelVisibility = false;
+                  rozwinButtonHeight = 40.0;
+                  zwinTextVisibility = false;
+                  arrowDownVisibility = false;
+                  rozwinTextVisibility = true;
+                  arrowUpVisibility = true;
+                  sprawdzButtonVisiibility = false;
+                  textFieldVisibility = false;
+                  tekstZagadkiVisibility = false;
+                  tekstPoSprawdzeniuVisibility = false;
+                });
+              },
+              child: Align(
+                  alignment: Alignment(0.635, zamknijPanelPolozenie),
+                  child: Visibility(
+                      visible: zamknijPanelVisibility,
+                      child: Container(
+                        width: 40.0,
+                        height: 40.0,
+                        child: Icon(
+                          Icons.close
+                        ),
+                      )
+                  )
+              )
+          ),
         ]),
       ),
     );
