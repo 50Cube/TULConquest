@@ -4,9 +4,6 @@ import 'package:tul_conquest/homescreen.dart';
 import 'package:tul_conquest/markers.dart';
 import 'package:location/location.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:vibration/vibration.dart';
-
-import 'about_program.dart';
 
 void main() => runApp(MyApp());
 
@@ -708,36 +705,11 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  Widget currentPage;
-
-  void callback(Widget nextPage) {
-    setState(() {
-      this.currentPage = nextPage;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     dodajZnacznikiDoListy(mapController, znaczniki);
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
       home: new HomeScreen());
-  }
-}
-
-class MainRoute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('CHUJ'),
-        ),
-        body: Center(
-          child: RaisedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text('KURWA')),
-        ));
   }
 }

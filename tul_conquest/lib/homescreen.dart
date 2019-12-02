@@ -3,6 +3,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:tul_conquest/main.dart';
 import 'package:vibration/vibration.dart';
 import 'about_program.dart';
+import 'settings.dart';
+import 'store.dart';
 
 final LatLng _center = const LatLng(51.746772, 19.453217);
 List<Marker> znaczniki = new List<Marker>();
@@ -26,7 +28,7 @@ class HomeScreenState extends State<HomeScreen>{
         backgroundColor: Colors.indigo[800],
       ),
       drawer: SizedBox(
-        width: 180,
+        width: MediaQuery.of(context).size.width * 0.5,
         child: Drawer(
             child: ListView(
                 padding: EdgeInsets.fromLTRB(0, 25, 0, 0),
@@ -43,14 +45,24 @@ class HomeScreenState extends State<HomeScreen>{
                         style: TextStyle(
                           fontSize: 22.0,
                         )),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => StoreRoute())
+                      );
+                    },
                   ),
                   ListTile(
                     title: Text('Ustawienia',
                         style: TextStyle(
                           fontSize: 22.0,
                         )),
-                    onTap: () {},
+                    onTap: () {
+//                      Navigator.push(
+//                        context,
+//                        MaterialPageRoute(builder: (context) => SettingsRoute())
+//                      );
+                    },
                   ),
                   Divider(),
                   ListTile(
@@ -61,7 +73,7 @@ class HomeScreenState extends State<HomeScreen>{
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => SecondRoute()),
+                          MaterialPageRoute(builder: (context) => About_programRoute()),
                         );
                       }),
                   ListTile(
@@ -230,13 +242,15 @@ class HomeScreenState extends State<HomeScreen>{
                             onTap: () {
                               setState(() {
                                 if (dist > 100) {
-                                  Vibration.vibrate(duration: 500);
+                                  if (wibracje)
+                                    Vibration.vibrate(duration: 500);
                                   tekstPoSprawdzeniu = "Podejdź bliżej";
                                 }
                                 else if (wprowadzonyTekst.text.toUpperCase().trimLeft().trimRight() == kluczZagadki.toUpperCase().trimLeft().trimRight()) {
                                   tekstPoSprawdzeniu = "DOBRZE"; }
                                 else {
-                                  Vibration.vibrate(duration: 500);
+                                  if (wibracje)
+                                    Vibration.vibrate(duration: 500);
                                   tekstPoSprawdzeniu = "ŹLE";
                                 }
                                 tekstPoSprawdzeniuVisibility = true;
