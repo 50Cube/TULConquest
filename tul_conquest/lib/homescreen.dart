@@ -58,10 +58,10 @@ class HomeScreenState extends State<HomeScreen>{
                           fontSize: 22.0,
                         )),
                     onTap: () {
-//                      Navigator.push(
-//                        context,
-//                        MaterialPageRoute(builder: (context) => SettingsRoute())
-//                      );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SettingsRoute())
+                      );
                     },
                   ),
                   Divider(),

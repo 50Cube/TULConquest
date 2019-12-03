@@ -4,12 +4,7 @@ import 'homescreen.dart';
 
 bool wibracje = false;
 
-class Settings extends StatefulWidget {
-  @override
-  HomeScreenState createState() => HomeScreenState();
-}
-
-class SettingsRoute extends State<Settings> {
+class SettingsRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,9 +19,7 @@ class SettingsRoute extends State<Settings> {
                     style:
                         TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                 onChanged: (bool value) {
-                  setState(() {
                     wibracje = value;
-                  });
                 },
               ))),
     );
