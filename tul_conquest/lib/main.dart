@@ -41,6 +41,8 @@ LocationData currentLocation;
 
 double dist = 0;
 
+List<bool> markerVisibilityList = new List();
+
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
@@ -49,9 +51,13 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   void dodajZnacznikiDoListy(
       GoogleMapController controller, List<Marker> znaczniki) {
+    for (int i=0; i<32; i++) {
+      markerVisibilityList[i] = true;
+    }
     znaczniki.add(Marker(
         markerId: MarkerId('fitfabric'),
         draggable: false,
+        visible: markerVisibilityList[0], //w reszcie 1, 2, 3 ...
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
