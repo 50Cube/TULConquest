@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+int points = 0;
 
 class ProfileScreen extends StatelessWidget {
 
@@ -15,7 +16,12 @@ class ProfileScreen extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: Text('Go back!'),
+            child: (
+                Text(
+                  '$points',
+                  style: TextStyle(fontSize: 30.0)
+                )
+            )
           ),
         ));
   }
