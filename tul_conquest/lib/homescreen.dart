@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:tul_conquest/main.dart';
+import 'package:tul_conquest/profilescreen.dart';
 import 'package:vibration/vibration.dart';
 import 'about_program.dart';
 import 'settings.dart';
@@ -39,6 +40,16 @@ class HomeScreenState extends State<HomeScreen>{
                           image: ExactAssetImage('assets/images/sail.png'),
                           fit: BoxFit.cover,
                         )),
+                  ),
+                  ListTile(
+                    title: Text('Profil',
+                      style: TextStyle(
+                          fontSize: 22.0,
+                       )),
+                    onTap: (){
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => ProfileScreen()));
+                    },
                   ),
                   ListTile(
                     title: Text('Sklep',
