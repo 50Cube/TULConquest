@@ -258,7 +258,9 @@ class HomeScreenState extends State<HomeScreen>{
                                   tekstPoSprawdzeniu = "Podejdź bliżej";
                                 }
                                 else if (wprowadzonyTekst.text.toUpperCase().trimLeft().trimRight() == kluczZagadki.toUpperCase().trimLeft().trimRight()) {
-                                  tekstPoSprawdzeniu = "DOBRZE"; }
+                                  tekstPoSprawdzeniu = "DOBRZE";
+                                  points++;
+                                }
                                 else {
                                   if (wibracje)
                                     Vibration.vibrate(duration: 500);

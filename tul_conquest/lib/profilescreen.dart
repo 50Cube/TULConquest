@@ -19,7 +19,12 @@ class ProfileScreen extends StatelessWidget {
               writeCounter(points);
               Navigator.pop(context);
             },
-            child: Text('Go back!'),
+            child: (
+                Text(
+                  '$points',
+                  style: TextStyle(fontSize: 30.0)
+                )
+            )
           ),
         ));
   }
