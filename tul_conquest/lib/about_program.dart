@@ -27,12 +27,24 @@ class About_programRoute extends StatelessWidget {
               )
             ]
           ),
-          child: Text(
-            'Lochy to kurwy',
+          child: Stack(
+            children: <Widget>[
+          Text(
+            'Poznaj kampus B lepiej!\n\nPodchodź do znaczników na mapie i rozglądaj się uważnie, aby znaleźć odpowiedź na zadane pytanie. '
+                'W ten sposób zdobywaj punkty ECTS. '
+                'Jeśli rozwiązałeś już wszystkie zagadki w zakładce Sklep możesz wykorzystać zebrane punkty i wykupić nowe znaczniki.',
             style: TextStyle(
-              fontSize: 20
+              fontSize: 18
             )
           ),
+            Align (
+              alignment: Alignment.bottomLeft,
+                child: Text(
+              'Autorzy:\nJakub Bogdan\nPrzemysław Komuda\nSzymon Rutkowski',
+                  style: TextStyle(
+                    fontSize: 12
+                  ),
+            ))]),
         )
       ),
     );
