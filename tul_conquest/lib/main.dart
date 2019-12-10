@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
   void dodajZnacznikiDoListy(
       GoogleMapController controller, List<Marker> znaczniki) {
     for (int i=0; i<32; i++) {
-      markerVisibilityList[i] = true;
+      markerVisibilityList.add(true);
     }
     znaczniki.add(Marker(
         markerId: MarkerId('fitfabric'),
@@ -76,6 +76,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('galanz'),
         draggable: false,
+        visible: markerVisibilityList[1],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -94,6 +95,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('Zegarek'),
         draggable: false,
+        visible: markerVisibilityList[2],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -112,7 +114,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('Klodka'),
         draggable: false,
-
+        visible: markerVisibilityList[3],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -132,7 +134,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('Posag'),
         draggable: false,
-
+        visible: markerVisibilityList[4],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -152,7 +154,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('Dziekanat'),
         draggable: false,
-
+        visible: markerVisibilityList[5],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -172,7 +174,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('Budownictwo'),
         draggable: false,
-
+        visible: markerVisibilityList[6],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -192,7 +194,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('Dzial transferu technologi'),
         draggable: false,
-
+        visible: markerVisibilityList[7],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -212,7 +214,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('Rektorat PL'),
         draggable: false,
-
+        visible: markerVisibilityList[8],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -232,7 +234,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('szambo'),
         draggable: false,
-
+        visible: markerVisibilityList[9],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -252,7 +254,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('Rozdzielnia'),
         draggable: false,
-
+        visible: markerVisibilityList[10],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -272,7 +274,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('CTI'),
         draggable: false,
-
+        visible: markerVisibilityList[11],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -292,7 +294,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('BudynekBPokoj15'),
         draggable: false,
-
+        visible: markerVisibilityList[12],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -312,7 +314,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('BudynekBPokoj14'),
         draggable: false,
-
+        visible: markerVisibilityList[13],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -332,7 +334,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('drogowskazybiblio'),
         draggable: false,
-
+        visible: markerVisibilityList[14],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -352,7 +354,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('b8regulaminwyjazd'),
         draggable: false,
-
+        visible: markerVisibilityList[15],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -372,7 +374,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('Kropka'),
         draggable: false,
-
+        visible: markerVisibilityList[16],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -392,7 +394,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('drukA4'),
         draggable: false,
-
+        visible: markerVisibilityList[17],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -412,7 +414,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('szlabanWyjazd'),
         draggable: false,
-
+        visible: markerVisibilityList[18],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -432,7 +434,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('bezLipy'),
         draggable: false,
-
+        visible: markerVisibilityList[19],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -452,7 +454,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('pomnikNatury'),
         draggable: false,
-
+        visible: markerVisibilityList[20],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -472,7 +474,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('Instytut przeplywowy'),
         draggable: false,
-
+        visible: markerVisibilityList[21],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -492,7 +494,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('wjazdodwolczanskiej5m'),
         draggable: false,
-
+        visible: markerVisibilityList[22],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -512,7 +514,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('rainbowtours'),
         draggable: false,
-
+        visible: markerVisibilityList[23],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -532,7 +534,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('papiernictwo'),
         draggable: false,
-
+        visible: markerVisibilityList[24],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -552,7 +554,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('posagwlesie'),
         draggable: false,
-
+        visible: markerVisibilityList[25],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -572,7 +574,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('przywyjezdzie na wolczanska'),
         draggable: false,
-
+        visible: markerVisibilityList[26],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -592,7 +594,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('przybiblotece'),
         draggable: false,
-
+        visible: markerVisibilityList[27],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -612,7 +614,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('nfz'),
         draggable: false,
-
+        visible: markerVisibilityList[28],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -632,7 +634,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('przylodexie'),
         draggable: false,
-
+        visible: markerVisibilityList[29],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -652,7 +654,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('zporr'),
         draggable: false,
-
+        visible: markerVisibilityList[30],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -672,7 +674,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('cj'),
         draggable: false,
-
+        visible: markerVisibilityList[31],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
