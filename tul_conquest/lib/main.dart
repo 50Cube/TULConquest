@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:tul_conquest/homescreen.dart';
@@ -695,8 +697,6 @@ class _MyAppState extends State<MyApp> {
         position: LatLng(51.745371, 19.451457)));
   }
 
-
-
   Future funcThatMakesAsyncCall() async {
     var result = await Geolocator().distanceBetween(currentLocation.latitude, currentLocation.longitude, lokacjaZnacznika.latitude, lokacjaZnacznika.longitude);
     setState(() {
@@ -708,6 +708,31 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     // TODO: implement initState
     super.initState();
+
+//    Timer.run(() {
+//      showDialog(
+//          context: context,
+//          builder: (BuildContext context) =>
+//          new AlertDialog(
+//            title: new Text(
+//                "Witaj w grze TUL CONQUEST!\nOwiedź zakładkę 'O programie', aby poznać zasady."),
+//            actions: <Widget>[
+//              new FlatButton(
+//                  onPressed: () {
+//                    Navigator.of(context).pop();
+//                  },
+//                  child: new Text(
+//                    'Zamknij',
+//                    style: TextStyle(
+//                      color: Colors.black,
+//                    ),
+//                  )
+//              )
+//            ],
+//          )
+//      );
+//    });
+
     location.onLocationChanged().listen((value) {
       setState(() {
         currentLocation = value;
