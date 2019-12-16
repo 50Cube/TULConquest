@@ -52,7 +52,9 @@ class _MyAppState extends State<MyApp> {
   void dodajZnacznikiDoListy(
       GoogleMapController controller, List<Marker> znaczniki) {
     for (int i=0; i<32; i++) {
-      markerVisibilityList.add(true);
+      if(i%8 == 0)
+        markerVisibilityList.add(true);
+      else markerVisibilityList.add(false);
     }
     znaczniki.add(Marker(
         markerId: MarkerId('fitfabric'),

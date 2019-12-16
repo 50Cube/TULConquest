@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
-int points=3;
+int points=10;
 class ProfileScreen extends StatelessWidget {
 
   @override
