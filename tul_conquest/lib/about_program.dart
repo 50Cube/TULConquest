@@ -17,7 +17,6 @@ class About_programRoute extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
-            //border: Border.all(width: 2.0, color: Colors.black),
             boxShadow: [
               BoxShadow(
                 color: Colors.grey,
