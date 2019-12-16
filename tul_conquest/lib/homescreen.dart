@@ -21,6 +21,22 @@ class HomeScreen extends StatefulWidget {
 
 
 class HomeScreenState extends State<HomeScreen>{
+
+  void zwijanie() {       // zwijanie panelu
+    setState(() {
+      zwinTextVisibility = false;
+      arrowDownVisibility = false;
+      rozwinTextVisibility = true;
+      arrowUpVisibility = true;
+      rozwinButtonHeight = 40.0;
+      sprawdzButtonVisiibility = false;
+      textFieldVisibility = false;
+      tekstZagadkiVisibility = false;
+      tekstPoSprawdzeniuVisibility = false;
+      zamknijPanelPolozenie = 0.8;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -112,13 +128,6 @@ class HomeScreenState extends State<HomeScreen>{
             markers: Set.from(znaczniki),
           ),
         ),
-//              Align(
-//                alignment: Alignment.center,
-//                child: Container(
-//                    child:
-//                  Text("Location" + dist.toString() + "  " + wprowadzonyTekst.text)
-//                )
-//              ),
         new Align(
             alignment: Alignment(0.93, -0.78),
             child: InkWell(
@@ -258,8 +267,30 @@ class HomeScreenState extends State<HomeScreen>{
                                   tekstPoSprawdzeniu = "Podejdź bliżej";
                                 }
                                 else if (wprowadzonyTekst.text.toUpperCase().trimLeft().trimRight() == kluczZagadki.toUpperCase().trimLeft().trimRight()) {
-                                  tekstPoSprawdzeniu = "DOBRZE";
-                                  points++;
+                                  tekstPoSprawdzeniu = "";
+                                  zwijanie();
+                                  showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          title: new Text("Gratulacje! Zdobywasz 3 punkty ECTS."),
+                                          actions: <Widget>[
+                                            new FlatButton(
+                                                onPressed: () {
+                                                  Navigator.of(context).pop();
+                                                },
+                                                child: new Text(
+                                                  'Zamknij',
+                                                  style: TextStyle(
+                                                    color: Colors.black,
+                                                  ),
+                                                )
+                                            )
+                                          ],
+                                        );
+                                      }
+                                  );
+                                  points += 3;
                                 }
                                 else {
                                   if (wibracje)
@@ -374,18 +405,7 @@ class HomeScreenState extends State<HomeScreen>{
                             GestureDetector(
                               // NAPIS ZWIN
                                 onTap: () {
-                                  setState(() {
-                                    zwinTextVisibility = false;
-                                    arrowDownVisibility = false;
-                                    rozwinTextVisibility = true;
-                                    arrowUpVisibility = true;
-                                    rozwinButtonHeight = 40.0;
-                                    sprawdzButtonVisiibility = false;
-                                    textFieldVisibility = false;
-                                    tekstZagadkiVisibility = false;
-                                    tekstPoSprawdzeniuVisibility = false;
-                                    zamknijPanelPolozenie = 0.8;
-                                  });
+                                  zwijanie();
                                 },
                                 child: Align(
                                   alignment: Alignment(0, 0.94),
