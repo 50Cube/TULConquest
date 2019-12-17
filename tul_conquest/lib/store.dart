@@ -21,7 +21,7 @@ class StoreRoute extends StatelessWidget {
           child: Align(
               alignment: Alignment.center,
               child: Container(
-                  width: MediaQuery.of(context).size.width * 0.85,
+                  width: szerokoscOkna * 0.85,
                   padding: EdgeInsets.fromLTRB(0, 50, 0, 30),
                   child: ListView(children: <Widget>[
                     GestureDetector(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tul_conquest/main.dart';
 
 class About_programRoute extends StatelessWidget {
   @override
@@ -11,8 +12,8 @@ class About_programRoute extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          height: MediaQuery.of(context).size.height * 0.7,
-          width: MediaQuery.of(context).size.width * 0.75,
+          height: wysokoscOkna * 0.7,
+          width: szerokoscOkna * 0.75,
           padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
             color: Colors.white,

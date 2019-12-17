@@ -1,10 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:tul_conquest/homescreen.dart';
-import 'package:tul_conquest/markers.dart';
 import 'package:location/location.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -43,6 +41,8 @@ LocationData currentLocation;
 
 
 double dist = 0;
+double szerokoscOkna = 0;
+double wysokoscOkna = 0;
 
 List<bool> markerVisibilityList = new List();
 
@@ -714,6 +714,10 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     dodajZnacznikiDoListy(mapController, znaczniki);
+    //szerokoscOkna = MediaQuery.of(context).size.width;
+    //wysokoscOkna = MediaQuery.of(context).size.height;
+    szerokoscOkna = 1600;
+    wysokoscOkna = 900;
     return new MaterialApp(
         debugShowCheckedModeBanner: false,
         home: new HomeScreen());

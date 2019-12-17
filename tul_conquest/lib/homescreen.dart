@@ -7,7 +7,6 @@ import 'package:vibration/vibration.dart';
 import 'about_program.dart';
 import 'settings.dart';
 import 'store.dart';
-import 'dart:io';
 import 'profilescreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -49,7 +48,7 @@ class HomeScreenState extends State<HomeScreen>{
         backgroundColor: Colors.indigo[800],
       ),
       drawer: SizedBox(
-        width: MediaQuery.of(context).size.width * 0.5,
+        width: szerokoscOkna * 0.5,
         child: Drawer(
             child: ListView(
                 padding: EdgeInsets.fromLTRB(0, 25, 0, 0),

@@ -2,6 +2,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tul_conquest/main.dart';
+
 int points=5;
 class ProfileScreen extends StatelessWidget {
   @override
@@ -12,8 +14,8 @@ class ProfileScreen extends StatelessWidget {
         body: Center(
           child:
             Container(
-              height: MediaQuery.of(context).size.height * 0.6,
-              width: MediaQuery.of(context).size.width * 0.75,
+              height: wysokoscOkna * 0.6,
+              width: szerokoscOkna * 0.75,
               padding: EdgeInsets.all(10),
               child: Stack(children: <Widget>[
                 Align(
@@ -29,8 +31,8 @@ class ProfileScreen extends StatelessWidget {
                 Align(
                   alignment: Alignment.center,
                   child: Container(
-                    height: MediaQuery.of(context).size.height * 0.3,
-                    width: MediaQuery.of(context).size.width * 0.7,
+                    height: wysokoscOkna * 0.3,
+                    width: szerokoscOkna * 0.7,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle,

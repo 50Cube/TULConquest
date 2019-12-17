@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'homescreen.dart';
+import 'package:tul_conquest/main.dart';
 
 bool wibracje = true;
 bool dzwiek = false;
@@ -18,7 +18,7 @@ class SettingsRoute extends StatelessWidget {
           title: Text("Ustawienia"), backgroundColor: Colors.indigo[800]),
       body: Center(
           child: Container(
-              width: MediaQuery.of(context).size.width * 0.85,
+              width: szerokoscOkna * 0.85,
               padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
               child: ListView(children: <Widget>[
                 SwitchListTile(
