@@ -33,6 +33,7 @@ class StoreRoute extends StatelessWidget {
                             }
                             tmp++; // żeby każdy zakup odsłaniał nowe znaczniki
                             points -= cena;
+                            cena++;
                             showDialog(
                                 context: context,
                                 builder: (BuildContext context) {
