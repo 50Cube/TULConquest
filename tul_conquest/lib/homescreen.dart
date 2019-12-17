@@ -267,6 +267,7 @@ class HomeScreenState extends State<HomeScreen>{
                                   tekstPoSprawdzeniu = "Podejdź bliżej";
                                 }
                                 else if (wprowadzonyTekst.text.toUpperCase().trimLeft().trimRight() == kluczZagadki.toUpperCase().trimLeft().trimRight()) {
+                                  //SystemSound.play(SystemSoundType.click);
                                   tekstPoSprawdzeniu = "";
                                   zwijanie();
                                   showDialog(

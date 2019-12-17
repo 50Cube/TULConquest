@@ -239,7 +239,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('szambo'),
         draggable: false,
-        visible: markerVisibilityList[9],
+        visible: markerVisibilityList[23],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {
@@ -519,7 +519,7 @@ class _MyAppState extends State<MyApp> {
     znaczniki.add(Marker(
         markerId: MarkerId('rainbowtours'),
         draggable: false,
-        visible: markerVisibilityList[23],
+        visible: markerVisibilityList[9],
         icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
         onTap: () {
           setState(() {

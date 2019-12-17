@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tul_conquest/main.dart';
 import 'package:tul_conquest/profilescreen.dart';
+import 'package:tul_conquest/settings.dart';
+import 'package:vibration/vibration.dart';
 
 int cena = 5;
 
@@ -52,6 +54,8 @@ class StoreRoute extends StatelessWidget {
                                   );
                                 });
                           } else {
+                            if (wibracje)
+                              Vibration.vibrate(duration: 500);
                             showDialog(
                                 context: context,
                                 builder: (BuildContext context) {
