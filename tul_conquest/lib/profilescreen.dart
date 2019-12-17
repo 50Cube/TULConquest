@@ -1,9 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
-
-int points = 10;
-
+import 'package:shared_preferences/shared_preferences.dart';
+int points=5;
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -54,12 +53,51 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ),
                     )
-                ))
+                )),
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child:
+                  new RaisedButton(
+                    onPressed:
+                  addPoints,
+                  child:
+                  new Text("Add"),),
+                ),
+                Align(
+                alignment: Alignment.bottomRight,
+                child:
+                new RaisedButton(
+                    onPressed:(){
+                    _save();
+                    },
+                    child:
+                    new Text("Save points"),),
+                )
               ])
+
             ),
         ));
   }
+  static int getPoints(){
+    if(points==null)
+      points=0;
+    return points;
+  }
+
+  void addPoints(){
+    points+=1;
+  }
+
+
 }
+
+ _save() async {
+  final prefs = await SharedPreferences.getInstance();
+  final key = 'my_int_key';
+  prefs.setInt(key, points);
+  print('saved $points');
+}
+
 
 Future<String> get _localPath async {
   final directory = await getApplicationDocumentsDirectory();
@@ -91,4 +129,5 @@ Future<int> readCounter() async {
     // If encountering an error, return 0.
     return 0;
   }
+
 }

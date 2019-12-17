@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:tul_conquest/main.dart';
 import 'package:tul_conquest/profilescreen.dart';
@@ -6,6 +7,9 @@ import 'package:vibration/vibration.dart';
 import 'about_program.dart';
 import 'settings.dart';
 import 'store.dart';
+import 'dart:io';
+import 'profilescreen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final LatLng _center = const LatLng(51.746772, 19.453217);
 List<Marker> znaczniki = new List<Marker>();
@@ -98,6 +102,7 @@ class HomeScreenState extends State<HomeScreen>{
                             fontSize: 22.0,
                           )),
                       onTap: () {
+                        _read();
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => About_programRoute()),
@@ -109,7 +114,7 @@ class HomeScreenState extends State<HomeScreen>{
                             fontSize: 22.0,
                           )),
                       onTap: () {
-                        //SystemNavigator.pop();
+                        SystemNavigator.pop();
                       })
                 ])),
       ),
@@ -487,5 +492,11 @@ class HomeScreenState extends State<HomeScreen>{
         ),
       ]),
     );
+  }
+  _read() async {
+    final prefs = await SharedPreferences.getInstance();
+    final key = 'my_int_key';
+    points = prefs.getInt(key) ?? 0;
+    print('read: $points');
   }
 }
