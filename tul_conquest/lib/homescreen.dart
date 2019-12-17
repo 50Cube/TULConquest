@@ -26,7 +26,7 @@ class HomeScreen extends StatefulWidget {
 class HomeScreenState extends State<HomeScreen>{
 
   void zwijanie() {       // zwijanie panelu
-    setState(() {
+    this.setState(() {
       zwinTextVisibility = false;
       arrowDownVisibility = false;
       rozwinTextVisibility = true;
@@ -42,6 +42,8 @@ class HomeScreenState extends State<HomeScreen>{
 
   @override
   Widget build(BuildContext context) {
+    szerokoscOkna = MediaQuery.of(context).size.width;
+    wysokoscOkna = MediaQuery.of(context).size.height;
     return new Scaffold(
       appBar: AppBar(
         title: Text('TUL CONQUEST'),
@@ -58,7 +60,7 @@ class HomeScreenState extends State<HomeScreen>{
                         image: DecorationImage(
                           image: ExactAssetImage('assets/images/sail.png'),
                           fit: BoxFit.cover,
-                        )),
+                        )), child: null,
                   ),
                   ListTile(
                     title: Text('Profil',
@@ -137,7 +139,7 @@ class HomeScreenState extends State<HomeScreen>{
             child: InkWell(
               // Wybor rodzaju mapy
                 onTap: () {
-                  setState(() {
+                  this.setState(() {
                     normalMapButtonVisibility = !normalMapButtonVisibility;
                     satelliteMapButtonVisibility =
                     !satelliteMapButtonVisibility;
@@ -160,7 +162,7 @@ class HomeScreenState extends State<HomeScreen>{
             child: InkWell(
               // normalna mapa
               onTap: () {
-                setState(() {
+                this.setState(() {
                   mapType = MapType.normal;
                   normalIconBorder = 2.0;
                   satelliteIconBorder = 0.5;
@@ -189,7 +191,7 @@ class HomeScreenState extends State<HomeScreen>{
             child: InkWell(
               // mapa satelita
               onTap: () {
-                setState(() {
+                this.setState(() {
                   mapType = MapType.satellite;
                   normalIconBorder = 0.5;
                   satelliteIconBorder = 2.0;
@@ -264,7 +266,7 @@ class HomeScreenState extends State<HomeScreen>{
 
                         GestureDetector(         // SPRAWDZ
                             onTap: () {
-                              setState(() {
+                              this.setState(() {
                                 if (dist > 100) {
                                   if (wibracje)
                                     Vibration.vibrate(duration: 500);
@@ -350,7 +352,7 @@ class HomeScreenState extends State<HomeScreen>{
                             GestureDetector(
                               // NAPIS ROZWIN
                                 onTap: () {
-                                  setState(() {
+                                  this.setState(() {
                                     rozwinTextVisibility = false;
                                     arrowUpVisibility = false;
                                     zwinTextVisibility = true;
@@ -382,7 +384,7 @@ class HomeScreenState extends State<HomeScreen>{
                             GestureDetector(
                               // STRZALKA W GORE
                                 onTap: () {
-                                  setState(() {
+                                  this.setState(() {
                                     rozwinTextVisibility = false;
                                     arrowUpVisibility = false;
                                     zwinTextVisibility = true;
@@ -431,7 +433,7 @@ class HomeScreenState extends State<HomeScreen>{
                             GestureDetector(
                               // STRZALKA W DOL
                                 onTap: () {
-                                  setState(() {
+                                  this.setState(() {
                                     zwinTextVisibility = false;
                                     arrowDownVisibility = false;
                                     rozwinTextVisibility = true;
@@ -461,7 +463,7 @@ class HomeScreenState extends State<HomeScreen>{
                 ))),
         GestureDetector(                              // ZAMKNIECIE PANELU
             onTap: () {
-              setState(() {
+              this.setState(() {
                 rozwinButtonVisibility = false;
                 zamknijPanelVisibility = false;
                 rozwinButtonHeight = 40.0;
