@@ -624,6 +624,11 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    location.onLocationChanged().listen((value) {
+      setState(() {
+        currentLocation = value;
+      });
+    });
   }
 
   @override
