@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tul_conquest/main.dart';
 import 'package:tul_conquest/profilescreen.dart';
 import 'package:tul_conquest/settings.dart';
@@ -8,6 +9,13 @@ import 'package:vibration/vibration.dart';
 int cena = 5;
 
 int tmp = 1;
+
+_save() async {
+  final prefs = await SharedPreferences.getInstance();
+  final key = 'my_int_key';
+  prefs.setInt(key, points);
+  print('saved $points');
+}
 
 class StoreRoute extends StatelessWidget {
   @override
@@ -54,6 +62,7 @@ class StoreRoute extends StatelessWidget {
                                     ],
                                   );
                                 });
+                            _save();
                           } else {
                             if (wibracje)
                               Vibration.vibrate(duration: 500);

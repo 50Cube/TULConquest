@@ -1,7 +1,4 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tul_conquest/main.dart';
 
 int points=5;
@@ -56,80 +53,9 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     )
                 )),
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child:
-                  new RaisedButton(
-                    onPressed:
-                  addPoints,
-                  child:
-                  new Text("Add"),),
-                ),
-                Align(
-                alignment: Alignment.bottomRight,
-                child:
-                new RaisedButton(
-                    onPressed:(){
-                    _save();
-                    },
-                    child:
-                    new Text("Save points"),),
-                )
               ])
 
             ),
         ));
   }
-  static int getPoints(){
-    if(points==null)
-      points=0;
-    return points;
-  }
-
-  void addPoints(){
-    points+=1;
-  }
-
-
-}
-
- _save() async {
-  final prefs = await SharedPreferences.getInstance();
-  final key = 'my_int_key';
-  prefs.setInt(key, points);
-  print('saved $points');
-}
-
-
-Future<String> get _localPath async {
-  final directory = await getApplicationDocumentsDirectory();
-
-  return directory.path;
-}
-
-Future<File> get _localFile async {
-  final path = await _localPath;
-  return File('$path/counter.txt');
-}
-
-Future<File> writeCounter(int counter) async {
-  final file = await _localFile;
-
-  // Write the file.
-  return file.writeAsString('$counter');
-}
-
-Future<int> readCounter() async {
-  try {
-    final file = await _localFile;
-
-    // Read the file.
-    String contents = await file.readAsString();
-
-    return int.parse(contents);
-  } catch (e) {
-    // If encountering an error, return 0.
-    return 0;
-  }
-
 }

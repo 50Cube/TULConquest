@@ -17,6 +17,14 @@ GoogleMapController mapController;
 void _onMapCreated(GoogleMapController controller) {
   mapController = controller;
 }
+
+_save() async {
+  final prefs = await SharedPreferences.getInstance();
+  final key = 'my_int_key';
+  prefs.setInt(key, points);
+  print('saved $points');
+}
+
 class HomeScreen extends StatefulWidget {
   @override
   HomeScreenState createState() => HomeScreenState();
@@ -103,7 +111,6 @@ class HomeScreenState extends State<HomeScreen>{
                             fontSize: 22.0,
                           )),
                       onTap: () {
-                        _read();
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => About_programRoute()),
@@ -297,6 +304,7 @@ class HomeScreenState extends State<HomeScreen>{
                                         );
                                       }
                                   );
+                                  _save();
                                   points += 3;
                                   this.setState(() {
                                     markerVisibilityList[aktualnyZnacznik] = false;
@@ -496,11 +504,5 @@ class HomeScreenState extends State<HomeScreen>{
         ),
       ]),
     );
-  }
-  _read() async {
-    final prefs = await SharedPreferences.getInstance();
-    final key = 'my_int_key';
-    points = prefs.getInt(key) ?? 0;
-    print('read: $points');
   }
 }

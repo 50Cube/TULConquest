@@ -2,9 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tul_conquest/homescreen.dart';
 import 'package:location/location.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:tul_conquest/profilescreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -655,9 +657,17 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  _read() async {
+    final prefs = await SharedPreferences.getInstance();
+    final key = 'my_int_key';
+    points = prefs.getInt(key) ?? 0;
+    print('read: $points');
+  }
+
   @override
   void initState() {
     super.initState();
+    _read();
     location.onLocationChanged().listen((value) {
       setState(() {
         currentLocation = value;
