@@ -248,7 +248,7 @@ class HomeScreenState extends State<HomeScreen>{
                             )
                         ),
                         Align(                  // POLE DO WPISYWANIA
-                            alignment: Alignment(0,0.3),
+                            alignment: Alignment(0,0.1),
                             child: Visibility(
                                 visible: textFieldVisibility,
                                 child: Container(
@@ -267,7 +267,7 @@ class HomeScreenState extends State<HomeScreen>{
                         GestureDetector(         // SPRAWDZ
                             onTap: () {
                               this.setState(() {
-                                if (dist > 100) {
+                                if (dist > 10000000) {
                                   if (wibracje)
                                     Vibration.vibrate(duration: 500);
                                   tekstPoSprawdzeniu = "Podejdź bliżej";
@@ -298,6 +298,9 @@ class HomeScreenState extends State<HomeScreen>{
                                       }
                                   );
                                   points += 3;
+                                  this.setState(() {
+                                    markerVisibilityList[aktualnyZnacznik] = false;
+                                  });
                                 }
                                 else {
                                   if (wibracje)
@@ -330,7 +333,7 @@ class HomeScreenState extends State<HomeScreen>{
                               ),
                             )),
                         Align(                            // PODEJDŹ BLIŻEJ
-                            alignment: Alignment(0, 0.82),
+                            alignment: Alignment(0, 0.4),
                             child: Visibility(
                                 visible: tekstPoSprawdzeniuVisibility,
                                 child: Container(
@@ -478,7 +481,7 @@ class HomeScreenState extends State<HomeScreen>{
               });
             },
             child: Align(
-                alignment: Alignment(0.635, zamknijPanelPolozenie),
+              alignment: Alignment(0.62, zamknijPanelPolozenie),
                 child: Visibility(
                     visible: zamknijPanelVisibility,
                     child: Container(

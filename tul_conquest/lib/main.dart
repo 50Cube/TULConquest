@@ -44,6 +44,8 @@ double dist = 0;
 double szerokoscOkna = 0;
 double wysokoscOkna = 0;
 
+int aktualnyZnacznik = 0;
+
 List<bool> markerVisibilityList = new List();
 
 class MyApp extends StatefulWidget {
@@ -82,6 +84,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Dyscyplina sportu";
             kluczZagadki = "Squash";
             lokacjaZnacznika = new LatLng(51.747000, 19.451992);
+            aktualnyZnacznik = 0;
           });
         },
         position: LatLng(51.747000, 19.451992)));
@@ -98,6 +101,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "_lan_";
             kluczZagadki = "Gaz";
             lokacjaZnacznika = new LatLng(51.747344, 19.455063);
+            aktualnyZnacznik = 1;
           });
         },
         position: LatLng(51.747344, 19.455063)));
@@ -115,6 +119,7 @@ class _MyAppState extends State<MyApp> {
             "Która godzina?\n\n(Wprowadź godzinę w formacie hh:mm)";
             kluczZagadki = "12:10";
             lokacjaZnacznika = new LatLng(51.745060, 19.453975);
+            aktualnyZnacznik = 2;
           });
         },
         position: LatLng(51.745060, 19.453975)));
@@ -131,6 +136,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Data na kłódce";
             kluczZagadki = "20.03";
             lokacjaZnacznika = new LatLng(51.747794, 19.454366);
+            aktualnyZnacznik = 3;
           }
           );
         },
@@ -148,6 +154,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Nazwisko rektora PŁ";
             kluczZagadki = "Krysiński";
             lokacjaZnacznika = new LatLng(51.746690, 19.453912);
+            aktualnyZnacznik = 4;
           }
           );
         },
@@ -165,6 +172,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Dziekanat ... Logistyki";
             kluczZagadki = "Kolegium";
             lokacjaZnacznika = new LatLng(51.747465, 19.455995);
+            aktualnyZnacznik = 5;
           }
           );
         },
@@ -182,6 +190,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Ilość tabliczek:";
             kluczZagadki = "9";
             lokacjaZnacznika = new LatLng(51.747634, 19.451893);
+            aktualnyZnacznik = 6;
           }
           );
         },
@@ -199,6 +208,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Jaka administracja?";
             kluczZagadki = "Rektorska";
             lokacjaZnacznika = new LatLng(51.748952, 19.454690);
+            aktualnyZnacznik = 7;
           }
           );
         },
@@ -216,6 +226,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Kto był właścicielem willi?";
             kluczZagadki = "Reinhold Richter";
             lokacjaZnacznika = new LatLng(51.748810, 19.455350);
+            aktualnyZnacznik = 8;
           }
           );
         },
@@ -233,6 +244,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Rok";
             kluczZagadki = "1558";
             lokacjaZnacznika = new LatLng(51.747708, 19.453324);
+            aktualnyZnacznik = 23;
           }
           );
         },
@@ -250,6 +262,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Ile V?";
             kluczZagadki = "400";
             lokacjaZnacznika = new LatLng(51.746909, 19.456282);
+            aktualnyZnacznik = 10;
           }
           );
         },
@@ -267,6 +280,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Wersja dydaktyki";
             kluczZagadki = "2.0";
             lokacjaZnacznika = new LatLng(51.747198, 19.456007);
+            aktualnyZnacznik = 11;
           }
           );
         },
@@ -284,6 +298,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Numer budynku";
             kluczZagadki = "B15";
             lokacjaZnacznika = new LatLng(51.746465, 19.455791);
+            aktualnyZnacznik = 12;
           }
           );
         },
@@ -301,6 +316,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Kto chroni obiekt?";
             kluczZagadki = "Magnum";
             lokacjaZnacznika = new LatLng(51.746409, 19.455395);
+            aktualnyZnacznik = 13;
           }
           );
         },
@@ -318,6 +334,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Liczba drogowskazów";
             kluczZagadki = "6";
             lokacjaZnacznika = new LatLng(51.745674, 19.455323);
+            aktualnyZnacznik = 14;
           }
           );
         },
@@ -335,6 +352,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Telefon do Dowódcy Straży Politechniki Łódzkiej";
             kluczZagadki = "631 29 07";
             lokacjaZnacznika = new LatLng(51.747571, 19.450931);
+            aktualnyZnacznik = 15;
           }
           );
         },
@@ -352,6 +370,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Kto zaprasza na zakupy?";
             kluczZagadki = "Kropka";
             lokacjaZnacznika = new LatLng(51.747704, 19.452855);
+            aktualnyZnacznik = 16;
           }
           );
         },
@@ -369,6 +388,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Największy format druku";
             kluczZagadki = "A0";
             lokacjaZnacznika = new LatLng(51.747965, 19.451947);
+            aktualnyZnacznik = 17;
           }
           );
         },
@@ -386,6 +406,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Opłata za zgubiony bilet";
             kluczZagadki = "50";
             lokacjaZnacznika = new LatLng(51.747796, 19.450893);
+            aktualnyZnacznik = 18;
           }
           );
         },
@@ -403,6 +424,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Bez";
             kluczZagadki = "Lipy";
             lokacjaZnacznika = new LatLng(51.748666, 19.453617);
+            aktualnyZnacznik = 19;
           }
           );
         },
@@ -420,6 +442,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Podstawa bryły tworzonej przez podpory drzewa to:";
             kluczZagadki = "Trójkąt";
             lokacjaZnacznika = new LatLng(51.748359, 19.455163);
+            aktualnyZnacznik = 20;
           }
           );
         },
@@ -437,6 +460,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Adres URL instytutu:";
             kluczZagadki = "www.imp.p.lodz.pl";
             lokacjaZnacznika = new LatLng(51.746696, 19.454084);
+            aktualnyZnacznik = 21;
           }
           );
         },
@@ -454,6 +478,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Bezpieczny dystans";
             kluczZagadki = "5m";
             lokacjaZnacznika = new LatLng(51.748300, 19.456389);
+            aktualnyZnacznik = 22;
           }
           );
         },
@@ -471,6 +496,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Znajdź tęczę";
             kluczZagadki = "Rainbow";
             lokacjaZnacznika = new LatLng(51.748921, 19.456253);
+            aktualnyZnacznik = 9;
           }
           );
         },
@@ -488,6 +514,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Instytut papiernictwa i ... Politechniki Łódzkiej";
             kluczZagadki = "Poligrafii";
             lokacjaZnacznika = new LatLng(51.746006, 19.454548);
+            aktualnyZnacznik = 24;
           }
           );
         },
@@ -505,6 +532,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Idzie zima";
             kluczZagadki = "Załóż czapkę";
             lokacjaZnacznika = new LatLng(51.748593, 19.453803);
+            aktualnyZnacznik = 25;
           }
           );
         },
@@ -522,6 +550,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Ilość słów";
             kluczZagadki = "8";
             lokacjaZnacznika = new LatLng(51.746099, 19.456230);
+            aktualnyZnacznik = 26;
           }
           );
         },
@@ -539,6 +568,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Ilość kafelków w drzwiach";
             kluczZagadki = "24";
             lokacjaZnacznika = new LatLng(51.745681, 19.453580);
+            aktualnyZnacznik = 27;
           }
           );
         },
@@ -556,6 +586,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Ile godzin dziennie czynne";
             kluczZagadki = "10";
             lokacjaZnacznika = new LatLng(51.747209, 19.455656);
+            aktualnyZnacznik = 28;
           }
           );
         },
@@ -573,6 +604,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Rok:";
             kluczZagadki = "2004";
             lokacjaZnacznika = new LatLng(51.747127, 19.453993);
+            aktualnyZnacznik = 29;
           }
           );
         },
@@ -590,6 +622,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "Skrót na tablicy";
             kluczZagadki = "ZPORR";
             lokacjaZnacznika = new LatLng(51.745913, 19.455619);
+            aktualnyZnacznik = 30;
           }
           );
         },
@@ -607,6 +640,7 @@ class _MyAppState extends State<MyApp> {
             tekstZagadki = "W razie niebezpiecześtwa ...";
             kluczZagadki = "Zbić szybkę";
             lokacjaZnacznika = new LatLng(51.745371, 19.451457);
+            aktualnyZnacznik = 31;
           }
           );
         },
