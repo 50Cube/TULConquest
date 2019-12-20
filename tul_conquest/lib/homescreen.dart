@@ -22,6 +22,8 @@ _save() async {
   final prefs = await SharedPreferences.getInstance();
   final key = 'my_int_key';
   prefs.setInt(key, points);
+  //TODO
+  // zapisywanie markerVisibilityList
   print('saved $points');
 }
 
@@ -33,12 +35,14 @@ class HomeScreen extends StatefulWidget {
 
 class HomeScreenState extends State<HomeScreen>{
 
-  void zwijanie() {       // zwijanie panelu
+  void poZdobyciuPunktow() {
     this.setState(() {
       zwinTextVisibility = false;
       arrowDownVisibility = false;
-      rozwinTextVisibility = true;
-      arrowUpVisibility = true;
+      rozwinTextVisibility = false;
+      arrowUpVisibility = false;
+      rozwinButtonVisibility = false;
+      zamknijPanelVisibility = false;
       rozwinButtonHeight = 40.0;
       sprawdzButtonVisiibility = false;
       textFieldVisibility = false;
@@ -282,7 +286,7 @@ class HomeScreenState extends State<HomeScreen>{
                                 else if (wprowadzonyTekst.text.toUpperCase().trimLeft().trimRight() == kluczZagadki.toUpperCase().trimLeft().trimRight()) {
                                   //SystemSound.play(SystemSoundType.click);
                                   tekstPoSprawdzeniu = "";
-                                  zwijanie();
+                                  poZdobyciuPunktow();
                                   showDialog(
                                       context: context,
                                       builder: (BuildContext context) {
@@ -305,8 +309,8 @@ class HomeScreenState extends State<HomeScreen>{
                                       }
                                   );
                                   _save();
-                                  points += 3;
                                   this.setState(() {
+                                    points += 3;
                                     markerVisibilityList[aktualnyZnacznik] = false;
                                   });
                                 }
@@ -423,7 +427,18 @@ class HomeScreenState extends State<HomeScreen>{
                             GestureDetector(
                               // NAPIS ZWIN
                                 onTap: () {
-                                  zwijanie();
+                                  this.setState(() {
+                                    zwinTextVisibility = false;
+                                    arrowDownVisibility = false;
+                                    rozwinTextVisibility = true;
+                                    arrowUpVisibility = true;
+                                    rozwinButtonHeight = 40.0;
+                                    sprawdzButtonVisiibility = false;
+                                    textFieldVisibility = false;
+                                    tekstZagadkiVisibility = false;
+                                    tekstPoSprawdzeniuVisibility = false;
+                                    zamknijPanelPolozenie = 0.8;
+                                  });
                                 },
                                 child: Align(
                                   alignment: Alignment(0, 0.94),

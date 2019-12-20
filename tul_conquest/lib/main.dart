@@ -7,6 +7,7 @@ import 'package:tul_conquest/homescreen.dart';
 import 'package:location/location.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:tul_conquest/profilescreen.dart';
+import 'package:tul_conquest/store.dart';
 
 void main() => runApp(MyApp());
 
@@ -660,7 +661,11 @@ class _MyAppState extends State<MyApp> {
   _read() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'my_int_key';
+    final price = 'price';
     points = prefs.getInt(key) ?? 0;
+    cena = prefs.getInt(price) ?? 6;
+    //TODO
+    // wczytywanie markerVisibilityList
     print('read: $points');
   }
 

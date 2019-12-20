@@ -6,14 +6,18 @@ import 'package:tul_conquest/profilescreen.dart';
 import 'package:tul_conquest/settings.dart';
 import 'package:vibration/vibration.dart';
 
-int cena = 5;
+int cena = 6;
 
 int tmp = 1;
 
 _save() async {
   final prefs = await SharedPreferences.getInstance();
   final key = 'my_int_key';
+  final price = 'price';
   prefs.setInt(key, points);
+  prefs.setInt(price, cena);
+  //TODO
+  // zapisywanie markerVisibilityList
   print('saved $points');
 }
 
