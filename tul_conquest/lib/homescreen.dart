@@ -39,16 +39,14 @@ class HomeScreenState extends State<HomeScreen>{
     this.setState(() {
       zwinTextVisibility = false;
       arrowDownVisibility = false;
-      rozwinTextVisibility = false;
-      arrowUpVisibility = false;
       rozwinButtonVisibility = false;
       zamknijPanelVisibility = false;
       rozwinButtonHeight = 40.0;
       sprawdzButtonVisiibility = false;
       textFieldVisibility = false;
       tekstZagadkiVisibility = false;
-      tekstPoSprawdzeniuVisibility = false;
-      zamknijPanelPolozenie = 0.8;
+      rozwinTextVisibility = true;
+      arrowUpVisibility = true;
     });
   }
 
