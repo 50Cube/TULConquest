@@ -47,6 +47,8 @@ class HomeScreenState extends State<HomeScreen>{
       tekstZagadkiVisibility = false;
       rozwinTextVisibility = true;
       arrowUpVisibility = true;
+      points += 3;
+      markerVisibilityList[aktualnyZnacznik] = false;
     });
   }
 
@@ -307,10 +309,6 @@ class HomeScreenState extends State<HomeScreen>{
                                       }
                                   );
                                   _save();
-                                  this.setState(() {
-                                    points += 3;
-                                    markerVisibilityList[aktualnyZnacznik] = false;
-                                  });
                                 }
                                 else {
                                   if (wibracje)
