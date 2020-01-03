@@ -700,11 +700,21 @@ class _MyAppState extends State<MyApp> {
     final key = 'my_int_key';
     final price = 'price';
     final licznik = 'licznik_znacznikow';
+//    final visibilities = 'visibilities';
     points = prefs.getInt(key) ?? 0;
     cena = prefs.getInt(price) ?? 6;
     licznikZdobytychZnacznikow = prefs.getInt(licznik) ?? 0;
     //TODO
     // wczytywanie markerVisibilityList
+//    List<String> markerVisibilityStringList = prefs.getStringList(visibilities);
+//    markerVisibilityList = new List();
+//    for (String v in markerVisibilityStringList) {
+//      if (v == "true") {
+//        markerVisibilityList.add(true);
+//      } else {
+//        markerVisibilityList.add(false);
+//      }
+//    }
     print('read: $points');
   }
 

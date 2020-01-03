@@ -24,10 +24,20 @@ _save() async {
   final prefs = await SharedPreferences.getInstance();
   final key = 'my_int_key';
   final licznik = 'licznik_znacznikow';
+//  final visibilities = 'visibilities';
   prefs.setInt(key, points);
   prefs.setInt(licznik, licznikZdobytychZnacznikow);
   //TODO
   // zapisywanie markerVisibilityList
+//  List<String> markerVisibilityStringList = new List();
+//  for (bool v in markerVisibilityList) {
+//    if (v == true) {
+//      markerVisibilityStringList.add("true");
+//    } else {
+//      markerVisibilityStringList.add("false");
+//    }
+//  }
+//  prefs.setStringList(visibilities, markerVisibilityStringList);
   print('saved $points');
 }
 
