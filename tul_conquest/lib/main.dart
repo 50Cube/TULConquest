@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -700,8 +699,10 @@ class _MyAppState extends State<MyApp> {
     final prefs = await SharedPreferences.getInstance();
     final key = 'my_int_key';
     final price = 'price';
+    final licznik = 'licznik_znacznikow';
     points = prefs.getInt(key) ?? 0;
     cena = prefs.getInt(price) ?? 6;
+    licznikZdobytychZnacznikow = prefs.getInt(licznik) ?? 0;
     //TODO
     // wczytywanie markerVisibilityList
     print('read: $points');
@@ -721,8 +722,6 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     dodajZnacznikiDoListy(mapController, znaczniki);
-    //szerokoscOkna = 800;
-    //wysokoscOkna = 400;
     return new MaterialApp(
         debugShowCheckedModeBanner: false, home: new HomeScreen());
   }

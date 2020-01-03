@@ -14,6 +14,8 @@ final LatLng _center = const LatLng(51.746772, 19.453217);
 List<Marker> znaczniki = new List<Marker>();
 GoogleMapController mapController;
 
+int licznikZdobytychZnacznikow = 0;
+
 void _onMapCreated(GoogleMapController controller) {
   mapController = controller;
 }
@@ -21,7 +23,9 @@ void _onMapCreated(GoogleMapController controller) {
 _save() async {
   final prefs = await SharedPreferences.getInstance();
   final key = 'my_int_key';
+  final licznik = 'licznik_znacznikow';
   prefs.setInt(key, points);
+  prefs.setInt(licznik, licznikZdobytychZnacznikow);
   //TODO
   // zapisywanie markerVisibilityList
   print('saved $points');
@@ -49,6 +53,7 @@ class HomeScreenState extends State<HomeScreen>{
       arrowUpVisibility = true;
       points += 3;
       markerVisibilityList[aktualnyZnacznik] = false;
+      licznikZdobytychZnacznikow++;
     });
   }
 
@@ -284,9 +289,32 @@ class HomeScreenState extends State<HomeScreen>{
                                   tekstPoSprawdzeniu = "Podejdź bliżej";
                                 }
                                 else if (wprowadzonyTekst.text.toUpperCase().trimLeft().trimRight() == kluczZagadki.toUpperCase().trimLeft().trimRight()) {
-                                  //SystemSound.play(SystemSoundType.click);
+                                  //SystemSound.play(SystemSoundType.click);    // DZWIEK, NIE DZIALA ??
                                   tekstPoSprawdzeniu = "";
                                   poZdobyciuPunktow();
+                                  if(licznikZdobytychZnacznikow == 32) {
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          title: new Text("Gratulacje! Rozwiązałeś wszystkie zagadki!"),
+                                          actions: <Widget>[
+                                            new FlatButton(
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: new Text(
+                                                "Zamknij",
+                                                style: TextStyle(
+                                                  color: Colors.black
+                                                )
+                                              )
+                                            )
+                                          ]
+                                        );
+                                      }
+                                    );
+                                  } else {
                                   showDialog(
                                       context: context,
                                       builder: (BuildContext context) {
@@ -307,7 +335,7 @@ class HomeScreenState extends State<HomeScreen>{
                                           ],
                                         );
                                       }
-                                  );
+                                  );}
                                   _save();
                                 }
                                 else {
