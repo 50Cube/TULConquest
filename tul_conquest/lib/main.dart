@@ -6,6 +6,7 @@ import 'package:tul_conquest/homescreen.dart';
 import 'package:location/location.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:tul_conquest/profilescreen.dart';
+import 'package:tul_conquest/settings.dart';
 import 'package:tul_conquest/store.dart';
 
 void main() => runApp(MyApp());
@@ -700,21 +701,22 @@ class _MyAppState extends State<MyApp> {
     final key = 'my_int_key';
     final price = 'price';
     final licznik = 'licznik_znacznikow';
-//    final visibilities = 'visibilities';
+    final visibilities = 'visibilities';
+    final wib = 'vibration';
     points = prefs.getInt(key) ?? 0;
     cena = prefs.getInt(price) ?? 6;
     licznikZdobytychZnacznikow = prefs.getInt(licznik) ?? 0;
-    //TODO
-    // wczytywanie markerVisibilityList
-//    List<String> markerVisibilityStringList = prefs.getStringList(visibilities);
-//    markerVisibilityList = new List();
-//    for (String v in markerVisibilityStringList) {
-//      if (v == "true") {
-//        markerVisibilityList.add(true);
-//      } else {
-//        markerVisibilityList.add(false);
-//      }
-//    }
+    wibracje = prefs.getBool(wib) ?? true;
+
+    List<String> markerVisibilityStringList = prefs.getStringList(visibilities) ?? 'false';
+    markerVisibilityList = new List();
+    for (String v in markerVisibilityStringList) {
+      if (v == "true") {
+        markerVisibilityList.add(true);
+      } else {
+        markerVisibilityList.add(false);
+      }
+    }
     print('read: $points');
   }
 

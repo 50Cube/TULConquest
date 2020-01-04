@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tul_conquest/main.dart';
 
 bool wibracje = true;
-bool dzwiek = false;
 
-//class Settings extends StatefulWidget {
-//  @override
-//   createState() => HomeScreenState();
-//}
+_save() async {
+  final prefs = await SharedPreferences.getInstance();
+  final wib = 'vibration';
+  prefs.setBool(wib, wibracje);
+}
 
 class SettingsRoute extends StatelessWidget {
   @override
@@ -21,6 +22,19 @@ class SettingsRoute extends StatelessWidget {
               width: szerokoscOkna * 0.85,
               padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
               child: ListView(children: <Widget>[
+                Align (
+                  alignment: Alignment.topCenter,
+                  child: Container (
+                    height: wysokoscOkna * 0.1,
+                    width: szerokoscOkna * 0.9,
+                    child: Text(''
+                        'Przeciągnij, aby wyłączyć lub włączyć wibracje.',
+                        style: TextStyle(
+                          fontSize: 18
+                        ),
+                    ),
+                  )
+                ),
                 SwitchListTile(
                   value: wibracje,
                   title: Text("Wibracje",
@@ -29,22 +43,10 @@ class SettingsRoute extends StatelessWidget {
                   onChanged: (bool value) {
                    // setState(() {
                       wibracje = value;
+                      _save();
                     //}
                   },
                   secondary: const Icon(Icons.vibration),
-                ),
-                Divider(),
-                SwitchListTile(
-                  value: dzwiek,
-                  title: Text("Dźwięk",
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold
-                  ),),
-                  onChanged: (bool value) {
-                    dzwiek = value;
-                  },
-                    secondary: const Icon(Icons.headset)
                 ),
               ]))),
     );

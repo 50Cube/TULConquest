@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tul_conquest/homescreen.dart';
 import 'package:tul_conquest/main.dart';
 
 int points=5;
@@ -53,6 +54,15 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     )
                 )),
+                Align (
+                  alignment: Alignment.bottomCenter,
+                  child: Text(
+                    'Rozwiązane zagadki: $licznikZdobytychZnacznikow',
+                    style: TextStyle(
+                      fontSize: 20
+                    ),
+                  )
+                )
               ])
 
             ),

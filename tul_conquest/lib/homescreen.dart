@@ -10,7 +10,7 @@ import 'store.dart';
 import 'profilescreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-final LatLng _center = const LatLng(51.746772, 19.453217);
+final LatLng _center = const LatLng(51.746500, 19.453400);
 List<Marker> znaczniki = new List<Marker>();
 GoogleMapController mapController;
 
@@ -24,20 +24,18 @@ _save() async {
   final prefs = await SharedPreferences.getInstance();
   final key = 'my_int_key';
   final licznik = 'licznik_znacznikow';
-//  final visibilities = 'visibilities';
+  final visibilities = 'visibilities';
   prefs.setInt(key, points);
   prefs.setInt(licznik, licznikZdobytychZnacznikow);
-  //TODO
-  // zapisywanie markerVisibilityList
-//  List<String> markerVisibilityStringList = new List();
-//  for (bool v in markerVisibilityList) {
-//    if (v == true) {
-//      markerVisibilityStringList.add("true");
-//    } else {
-//      markerVisibilityStringList.add("false");
-//    }
-//  }
-//  prefs.setStringList(visibilities, markerVisibilityStringList);
+  List<String> markerVisibilityStringList = new List();
+  for (bool v in markerVisibilityList) {
+    if (v) {
+      markerVisibilityStringList.add("true");
+    } else {
+      markerVisibilityStringList.add("false");
+    }
+  }
+  prefs.setStringList(visibilities, markerVisibilityStringList);
   print('saved $points');
 }
 
@@ -141,7 +139,38 @@ class HomeScreenState extends State<HomeScreen>{
                             fontSize: 22.0,
                           )),
                       onTap: () {
-                        SystemNavigator.pop();
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: new Text("Na pewno chcesz zamknąć aplikację?"),
+                                actions: <Widget>[
+                                  new FlatButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: new Text(
+                                        'Nie',
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                        ),
+                                      )
+                                  ),
+                                  new FlatButton (
+                                    onPressed: () {
+                                      SystemNavigator.pop();
+                                    },
+                                    child: new Text(
+                                      'Tak',
+                                      style: TextStyle(
+                                        color: Colors.black
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              );
+                            }
+                        );
                       })
                 ])),
       ),
@@ -299,7 +328,7 @@ class HomeScreenState extends State<HomeScreen>{
                                   tekstPoSprawdzeniu = "Podejdź bliżej";
                                 }
                                 else if (wprowadzonyTekst.text.toUpperCase().trimLeft().trimRight() == kluczZagadki.toUpperCase().trimLeft().trimRight()) {
-                                  //SystemSound.play(SystemSoundType.click);    // DZWIEK, NIE DZIALA ??
+                                  SystemSound.play(SystemSoundType.click);    // DZWIEK, NIE DZIALA ??
                                   tekstPoSprawdzeniu = "";
                                   poZdobyciuPunktow();
                                   if(licznikZdobytychZnacznikow == 32) {
