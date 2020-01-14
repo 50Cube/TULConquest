@@ -328,7 +328,6 @@ class HomeScreenState extends State<HomeScreen>{
                                   tekstPoSprawdzeniu = "Podejdź bliżej";
                                 }
                                 else if (wprowadzonyTekst.text.toUpperCase().trimLeft().trimRight() == kluczZagadki.toUpperCase().trimLeft().trimRight()) {
-                                  SystemSound.play(SystemSoundType.click);    // DZWIEK, NIE DZIALA ??
                                   tekstPoSprawdzeniu = "";
                                   poZdobyciuPunktow();
                                   if(licznikZdobytychZnacznikow == 32) {
@@ -435,7 +434,7 @@ class HomeScreenState extends State<HomeScreen>{
                                     arrowUpVisibility = false;
                                     zwinTextVisibility = true;
                                     arrowDownVisibility = true;
-                                    rozwinButtonHeight = 440.0;
+                                    rozwinButtonHeight = wysokoscOkna * 0.65;
                                     sprawdzButtonVisiibility = true;
                                     textFieldVisibility = true;
                                     tekstZagadkiVisibility = true;
@@ -467,7 +466,7 @@ class HomeScreenState extends State<HomeScreen>{
                                     arrowUpVisibility = false;
                                     zwinTextVisibility = true;
                                     arrowDownVisibility = true;
-                                    rozwinButtonHeight = 440.0;
+                                    rozwinButtonHeight = wysokoscOkna * 0.65;
                                     sprawdzButtonVisiibility = true;
                                     textFieldVisibility = true;
                                     tekstZagadkiVisibility = true;
