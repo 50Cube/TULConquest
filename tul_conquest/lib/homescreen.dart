@@ -322,7 +322,7 @@ class HomeScreenState extends State<HomeScreen>{
                         GestureDetector(         // SPRAWDZ
                             onTap: () {
                               this.setState(() {
-                                if (dist > 10000000) {
+                                if (dist > 15) {
                                   if (wibracje)
                                     Vibration.vibrate(duration: 500);
                                   tekstPoSprawdzeniu = "Podejdź bliżej";
