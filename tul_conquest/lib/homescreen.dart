@@ -8,6 +8,7 @@ import 'about_program.dart';
 import 'settings.dart';
 import 'store.dart';
 import 'profilescreen.dart';
+import 'help.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final LatLng _center = const LatLng(51.746500, 19.453400);
@@ -133,6 +134,18 @@ class HomeScreenState extends State<HomeScreen>{
                           MaterialPageRoute(builder: (context) => About_programRoute()),
                         );
                       }),
+                  ListTile(
+                      title: Text('Pomoc',
+                          style: TextStyle(
+                            fontSize: 22.0,
+                          )),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HelpRoute()),
+                        );
+                      }),
+                  Divider(),
                   ListTile(
                       title: Text('Zakończ',
                           style: TextStyle(
